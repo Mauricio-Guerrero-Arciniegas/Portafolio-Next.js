@@ -1,0 +1,12 @@
+{
+  "navbar": {
+    "home": "Inicio",
+    "about": "Acerca de mí",
+    "projects": "Proyectos",
+    "contact": "Contacto"
+  },
+  "home": {
+    "title": "Bienvenido a mi portafolio",
+    "subtitle": "Explora mi trabajo y conoce más sobre mí."
+  }
+}
