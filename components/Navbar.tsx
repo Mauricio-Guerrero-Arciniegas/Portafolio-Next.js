@@ -7,7 +7,7 @@ import { useLanguage } from '@/context/LanguageContext';
 import ThemeToggle from '../components/ThemeToggle';
 
 export default function Navbar() {
-  const { t } = useLanguage();
+  const { t, setLanguage, language } = useLanguage(); // <-- obtenemos idioma y setter
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -22,10 +22,19 @@ export default function Navbar() {
         <Link href="/about">{t.navbar.about}</Link>
         <Link href="/projects">{t.navbar.projects}</Link>
         <Link href="/contact">{t.navbar.contact}</Link>
+
+        {/* Botón para cambiar idioma */}
+        <button
+          onClick={() => setLanguage(language === 'es' ? 'en' : 'es')}
+          className={styles.navbar__lang}
+        >
+          {language === 'es' ? 'EN' : 'ES'}
+        </button>
+
         <ThemeToggle />
       </nav>
 
-      {/* Hamburger Button */}
+      {/* Botón hamburguesa */}
       <button
         className={styles.navbar__toggle}
         onClick={() => setIsOpen(!isOpen)}
@@ -36,7 +45,7 @@ export default function Navbar() {
         <span />
       </button>
 
-      {/* Mobile menu */}
+      {/* Menú móvil */}
       <AnimatePresence>
         {isOpen && (
           <motion.nav
@@ -49,6 +58,18 @@ export default function Navbar() {
             <Link href="/about" onClick={() => setIsOpen(false)}>{t.navbar.about}</Link>
             <Link href="/projects" onClick={() => setIsOpen(false)}>{t.navbar.projects}</Link>
             <Link href="/contact" onClick={() => setIsOpen(false)}>{t.navbar.contact}</Link>
+
+            {/* Botón cambio idioma en móvil */}
+            <button
+              onClick={() => {
+                setLanguage(language === 'es' ? 'en' : 'es');
+                setIsOpen(false);
+              }}
+              className={styles.navbar__lang}
+            >
+              {language === 'es' ? 'EN' : 'ES'}
+            </button>
+
             <ThemeToggle />
           </motion.nav>
         )}

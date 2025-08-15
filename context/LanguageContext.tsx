@@ -8,19 +8,19 @@ type Locale = 'es' | 'en';
 type Translations = typeof es;
 
 interface LanguageContextType {
-  locale: Locale;
+  language: Locale;
   t: Translations;
-  setLocale: (locale: Locale) => void;
+  setLanguage: (language: Locale) => void;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-  const [locale, setLocale] = useState<Locale>('es');
-  const translations = locale === 'es' ? es : en;
+  const [language, setLanguage] = useState<Locale>('es');
+  const translations = language === 'es' ? es : en;
 
   return (
-    <LanguageContext.Provider value={{ locale, t: translations, setLocale }}>
+    <LanguageContext.Provider value={{ language, t: translations, setLanguage }}>
       {children}
     </LanguageContext.Provider>
   );
