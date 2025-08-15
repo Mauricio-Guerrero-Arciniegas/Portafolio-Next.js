@@ -6,7 +6,9 @@
     "contact": "Contact"
   },
   "home": {
-    "title": "Welcome to my portfolio",
-    "subtitle": "Explore my work and learn more about me."
-  }
+  "title": "Hi, I'm Mauricio",
+  "subtitle": "Web developer focused on creating modern and engaging digital experiences.",
+  "ctaProjects": "View projects",
+  "ctaContact": "Contact me"
+}
 }

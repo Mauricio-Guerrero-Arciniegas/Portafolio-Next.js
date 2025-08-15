@@ -5,26 +5,79 @@
   padding: 1rem 2rem;
   background: var(--color-bg);
   color: var(--color-text);
-  border-bottom: 1px solid #ccc;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 
-  &__logo {
+  &__logo a {
     font-weight: bold;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: inherit;
   }
 
   &__links {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
+    display: none;
 
-    li {
-      a:hover {
-        text-decoration: underline;
+    @media (min-width: 768px) {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+
+      a {
+        text-decoration: none;
+        color: inherit;
+        font-weight: 500;
+        transition: color 0.3s;
+
+        &:hover {
+          color: var(--color-primary);
+        }
       }
     }
   }
 
-  &__actions {
+  &__toggle {
     display: flex;
-    gap: 1rem;
+    flex-direction: column;
+    gap: 0.3rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+
+    span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background: var(--color-text);
+      border-radius: 2px;
+    }
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 2rem;
+    background: var(--color-bg);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      font-weight: 500;
+
+      &:hover {
+        color: var(--color-primary);
+      }
+    }
   }
 }
