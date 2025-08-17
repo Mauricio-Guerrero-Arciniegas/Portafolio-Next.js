@@ -1,4 +1,59 @@
 .home {
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr; // 50% + 50%
+  background: url('../../public/images/wallpaper1.jpg') no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  color: white;
+}
+
+.home__glass {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-right: 2px solid rgba(255, 255, 255, 0.2);
+   
+}
+
+.home__title {
+  font-size: 3.5rem;
+  font-weight: bold;
+  text-align: center;
+  display: inline-block;
+
+  span {
+    display: inline-block;
+    background: linear-gradient(90deg, cyan, #3065c9, cyan);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  &--final span {
+  color: cyan;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.3),
+               0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 2rem;
+  }
+}
+
+.home {
   &__hero {
     display: flex;
     flex-direction: column;
@@ -13,8 +68,7 @@
   }
 
   &__title {
-    font-size: 2rem;
-    font-weight: 700;
+    
     margin-bottom: 1rem;
     color: white;
 
