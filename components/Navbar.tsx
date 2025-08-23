@@ -7,14 +7,35 @@ import { useLanguage } from '@/context/LanguageContext';
 import ThemeToggle from '../components/ThemeToggle';
 
 export default function Navbar() {
-  const { t, setLanguage, language } = useLanguage(); // <-- obtenemos idioma y setter
+  const { t, setLanguage, language } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
+
+  // Función para obtener la bandera actual
+  const getFlag = () => {
+    return language === 'es' ? '/flags/en.png' : '/flags/es.png';
+  };
 
   return (
     <header className={styles.navbar}>
-      <div className={styles.navbar__logo}>
-        <Link href="/">MiLogo</Link>
-      </div>
+      <Link href="/" className={styles.loader} aria-label="Go to home">
+        <svg
+          className={styles.loader__svg}
+          width="80"
+          height="80"
+          viewBox="0 0 100 100"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            className={styles.loader__path}
+            d="M 10 80 L 44 26 L 52 43 L 65 21 L 80 47"
+            stroke="#00e1ff"
+            strokeWidth="5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </Link>
 
       {/* Desktop links */}
       <nav className={styles.navbar__links}>
@@ -23,12 +44,16 @@ export default function Navbar() {
         <Link href="/projects">{t.navbar.projects}</Link>
         <Link href="/contact">{t.navbar.contact}</Link>
 
-        {/* Botón para cambiar idioma */}
+        {/* Botón cambio idioma con bandera */}
         <button
           onClick={() => setLanguage(language === 'es' ? 'en' : 'es')}
           className={styles.navbar__lang}
         >
-          {language === 'es' ? 'EN' : 'ES'}
+          <img
+            src={getFlag()}
+            alt={language === 'es' ? 'Español' : 'English'}
+            className={styles.navbar__flag}
+          />
         </button>
 
         <ThemeToggle />
@@ -54,12 +79,20 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
           >
-            <Link href="/" onClick={() => setIsOpen(false)}>{t.navbar.home}</Link>
-            <Link href="/about" onClick={() => setIsOpen(false)}>{t.navbar.about}</Link>
-            <Link href="/projects" onClick={() => setIsOpen(false)}>{t.navbar.projects}</Link>
-            <Link href="/contact" onClick={() => setIsOpen(false)}>{t.navbar.contact}</Link>
+            <Link href="/" onClick={() => setIsOpen(false)}>
+              {t.navbar.home}
+            </Link>
+            <Link href="/about" onClick={() => setIsOpen(false)}>
+              {t.navbar.about}
+            </Link>
+            <Link href="/projects" onClick={() => setIsOpen(false)}>
+              {t.navbar.projects}
+            </Link>
+            <Link href="/contact" onClick={() => setIsOpen(false)}>
+              {t.navbar.contact}
+            </Link>
 
-            {/* Botón cambio idioma en móvil */}
+            {/* Botón cambio idioma en móvil con bandera */}
             <button
               onClick={() => {
                 setLanguage(language === 'es' ? 'en' : 'es');
@@ -67,7 +100,11 @@ export default function Navbar() {
               }}
               className={styles.navbar__lang}
             >
-              {language === 'es' ? 'EN' : 'ES'}
+              <img
+                src={getFlag()}
+                alt={language === 'es' ? 'Español' : 'English'}
+                className={styles.navbar__flag}
+              />
             </button>
 
             <ThemeToggle />

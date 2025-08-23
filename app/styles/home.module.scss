@@ -1,3 +1,4 @@
+
 .home {
   position: relative;
   min-height: 100vh;
@@ -90,7 +91,7 @@
     }
   }
 
-  &__buttons {
+    &__buttons {
     display: flex;
     gap: 0.75rem;
     flex-wrap: wrap;
@@ -98,34 +99,38 @@
   }
 
   &__btn {
-    background: white;
-    color: var(--color-primary);
-    padding: 0.65rem 1.25rem;
-    border-radius: 999px;
+    background: #fff;
+    color: #111; // ✅ contraste correcto
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
     text-decoration: none;
-    font-weight: 500;
-    transition: transform 0.2s ease, background 0.3s ease;
-    font-size: 0.9rem;
+    display: inline-block;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: #111;   // ✅ invertido en hover
+      color: #fff;
+      transform: translateY(-2px); // ✅ efecto lift
+    }
 
     @media (min-width: 768px) {
       padding: 0.75rem 1.5rem;
       font-size: 1rem;
     }
+  }
+
+  &__btn--secondary {
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff; // ✅ bordeado en blanco
 
     &:hover {
+      background: #fff;
+      color: #111; // ✅ contraste al hover
       transform: translateY(-2px);
     }
-
-    &--secondary {
-      background: transparent;
-      color: white;
-      border: 2px solid white;
-
-      &:hover {
-        background: white;
-        color: var(--color-primary);
-      }
-    }
+  
   }
 }
 

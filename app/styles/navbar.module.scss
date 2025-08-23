@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 0.8rem 1.5rem; // un poco más compacto
   background: var(--color-bg);
   color: var(--color-text);
   position: sticky;
@@ -21,7 +21,7 @@
 
     @media (min-width: 768px) {
       display: flex;
-      gap: 1.5rem;
+      gap: 1.2rem;
       align-items: center;
 
       a {
@@ -35,6 +35,29 @@
         }
       }
     }
+  }
+
+  .navbar__lang {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+
+  .navbar__flag {
+    width: 22px; // más compacta
+    height: 16px; // relación estándar de banderas
+    object-fit: cover;
+    border-radius: 3px; // esquinas redondeadas suaves
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2); // ligera sombra
   }
 
   &__toggle {
@@ -63,7 +86,7 @@
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
-    padding: 2rem;
+    padding: 1.5rem;
     background: var(--color-bg);
     position: absolute;
     top: 100%;
@@ -79,5 +102,30 @@
         color: var(--color-primary);
       }
     }
+
+    .navbar__lang {
+      margin-top: 0.5rem;
+    }
+  }
+}
+
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+
+  &__svg {
+    width: 38px;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+
+  &:hover .loader__svg {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 6px #00e1ff);
   }
 }
