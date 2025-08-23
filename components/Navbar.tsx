@@ -10,7 +10,7 @@ export default function Navbar() {
   const { t, setLanguage, language } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
 
-  // Función para obtener la bandera actual
+  // Rutas de banderas
   const getFlag = () => {
     return language === 'es' ? '/flags/en.png' : '/flags/es.png';
   };
@@ -44,16 +44,23 @@ export default function Navbar() {
         <Link href="/projects">{t.navbar.projects}</Link>
         <Link href="/contact">{t.navbar.contact}</Link>
 
-        {/* Botón cambio idioma con bandera */}
+        {/* Botón cambio idioma con animación */}
         <button
           onClick={() => setLanguage(language === 'es' ? 'en' : 'es')}
           className={styles.navbar__lang}
         >
-          <img
-            src={getFlag()}
-            alt={language === 'es' ? 'Español' : 'English'}
-            className={styles.navbar__flag}
-          />
+          <AnimatePresence mode="wait" initial={false}>
+            <motion.img
+              key={language} // cambia cada vez que cambia el idioma
+              src={getFlag()}
+              alt={language === 'es' ? 'Español' : 'English'}
+              className={styles.navbar__flag}
+              initial={{ rotateY: 90, opacity: 0 }}
+              animate={{ rotateY: 0, opacity: 1 }}
+              exit={{ rotateY: -90, opacity: 0 }}
+              transition={{ duration: 0.4 }}
+            />
+          </AnimatePresence>
         </button>
 
         <ThemeToggle />
@@ -92,7 +99,7 @@ export default function Navbar() {
               {t.navbar.contact}
             </Link>
 
-            {/* Botón cambio idioma en móvil con bandera */}
+            {/* Botón cambio idioma en móvil */}
             <button
               onClick={() => {
                 setLanguage(language === 'es' ? 'en' : 'es');
@@ -100,11 +107,18 @@ export default function Navbar() {
               }}
               className={styles.navbar__lang}
             >
-              <img
-                src={getFlag()}
-                alt={language === 'es' ? 'Español' : 'English'}
-                className={styles.navbar__flag}
-              />
+              <AnimatePresence mode="wait" initial={false}>
+                <motion.img
+                  key={language}
+                  src={getFlag()}
+                  alt={language === 'es' ? 'Español' : 'English'}
+                  className={styles.navbar__flag}
+                  initial={{ rotateY: 90, opacity: 0 }}
+                  animate={{ rotateY: 0, opacity: 1 }}
+                  exit={{ rotateY: -90, opacity: 0 }}
+                  transition={{ duration: 0.4 }}
+                />
+              </AnimatePresence>
             </button>
 
             <ThemeToggle />

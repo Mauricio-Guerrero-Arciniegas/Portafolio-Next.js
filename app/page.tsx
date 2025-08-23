@@ -19,19 +19,22 @@ export default function HomePage() {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h1
-          className={`${styles.home__title} ${
-            finished ? styles['home__title--final'] : ''
-          }`}
-        >
-          <motion.span
-            initial={{ backgroundPosition: '200% 50%' }}
-            animate={{ backgroundPosition: '0% 50%' }}
-            transition={{ duration: 2, ease: 'easeInOut' }}
-            onAnimationComplete={() => setFinished(true)}
-          >
-            {title}
-          </motion.span>
+        <h1 className={styles.home__title}>
+          {title.split('').map((char, i) => (
+            <motion.span
+              key={i}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                delay: i * 0.08, // entrada escalonada
+                duration: 0.6,
+                ease: 'easeOut'
+              }}
+              className={styles.home__letter}
+            >
+              {char === ' ' ? '\u00A0' : char}
+            </motion.span>
+          ))}
         </h1>
 
         <p className={styles.home__text}>{t.home.subtitle}</p>
