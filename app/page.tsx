@@ -4,12 +4,11 @@ import { motion } from 'framer-motion';
 import styles from './styles/home.module.scss';
 import { useLanguage } from '@/context/LanguageContext';
 import Link from 'next/link';
-import { useState } from 'react';
+import { Github, Linkedin } from 'lucide-react'; // ✅ Importamos iconos
 
 export default function HomePage() {
   const { t } = useLanguage();
   const title = t.home.title; // "Mauricio Guerrero A."
-  const [finished, setFinished] = useState(false);
 
   return (
     <main className={styles.home}>
@@ -20,21 +19,21 @@ export default function HomePage() {
         transition={{ duration: 0.6 }}
       >
         <h1 className={styles.home__title}>
-          {title.split('').map((char, i) => (
+          <motion.span
+            initial={{ width: 0 }}
+            animate={{ width: "100%" }}
+            transition={{ duration: 1.2, ease: "easeInOut" }}
+            className="inline-block overflow-hidden"
+          >
             <motion.span
-              key={i}
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                delay: i * 0.08, // entrada escalonada
-                duration: 0.6,
-                ease: 'easeOut'
-              }}
+              initial={{ x: -50, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 1.2, ease: "easeOut" }}
               className={styles.home__letter}
             >
-              {char === ' ' ? '\u00A0' : char}
+              {title}
             </motion.span>
-          ))}
+          </motion.span>
         </h1>
 
         <p className={styles.home__text}>{t.home.subtitle}</p>
@@ -52,7 +51,17 @@ export default function HomePage() {
         </div>
       </motion.section>
 
-      <div className={styles.home__right}></div>
+      {/* ✅ Columna derecha con iconos */}
+      <div className={styles.home__right}>
+        <div className={styles.home__socials}>
+          <Link href="https://github.com/Mauricio-Guerrero-Arciniegas" target="_blank">
+            <Github size={32} />
+          </Link>
+          <Link href="https://www.linkedin.com/in/mauricio-guerrero-827582220/" target="_blank">
+            <Linkedin size={32} />
+          </Link>
+        </div>
+      </div>
     </main>
   );
 }
