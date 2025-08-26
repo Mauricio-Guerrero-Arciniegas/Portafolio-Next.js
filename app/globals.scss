@@ -1,3 +1,11 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Variables de tema */
 :root {
   --color-bg: #ffffff;
   --color-text: #000000;
@@ -8,14 +16,28 @@
   --color-text: #ffffff;
 }
 
-body {
-  margin: 0;
-  padding: 0;
+/* HTML y body ocupan toda la pantalla y bloquean scroll */
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;  /* 👈 Bloquea scroll */
   background-color: var(--color-bg);
   color: var(--color-text);
   font-family: sans-serif;
 }
 
+/* Contenedor principal de Home */
+#home {
+  height: 100vh;      /* 👈 altura exacta de la ventana */
+  width: 100vw;       /* 👈 ancho completo */
+  overflow: hidden;   /* 👈 asegura que no aparezca scroll interno */
+  display: flex;      /* opcional: para centrar contenido */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Enlaces sin subrayado */
 a {
   color: inherit;
   text-decoration: none;

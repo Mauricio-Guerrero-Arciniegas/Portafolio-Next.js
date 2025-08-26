@@ -4,14 +4,15 @@ import { motion } from 'framer-motion';
 import styles from './styles/home.module.scss';
 import { useLanguage } from '@/context/LanguageContext';
 import Link from 'next/link';
-import { Github, Linkedin } from 'lucide-react'; // ✅ Importamos iconos
+import { Github, Linkedin } from 'lucide-react';
 
 export default function HomePage() {
   const { t } = useLanguage();
-  const title = t.home.title; // "Mauricio Guerrero A."
+  const title = t.home.title;
 
   return (
     <main className={styles.home}>
+      {/* 🔹 Columna izquierda */}
       <motion.section
         className={styles.home__glass}
         initial={{ opacity: 0, x: -100 }}
@@ -23,7 +24,7 @@ export default function HomePage() {
             initial={{ width: 0 }}
             animate={{ width: "100%" }}
             transition={{ duration: 1.2, ease: "easeInOut" }}
-            className="inline-block overflow-hidden"
+            className={styles.home__titleWrapper}
           >
             <motion.span
               initial={{ x: -50, opacity: 0 }}
@@ -51,13 +52,27 @@ export default function HomePage() {
         </div>
       </motion.section>
 
-      {/* ✅ Columna derecha con iconos */}
+      {/* 🔹 Columna derecha (iconos sociales con flecha animada) */}
       <div className={styles.home__right}>
         <div className={styles.home__socials}>
-          <Link href="https://github.com/Mauricio-Guerrero-Arciniegas" target="_blank">
+          <motion.div
+            className={styles.home__arrow}
+            animate={{ y: [0, -10, 0] }}
+            transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+          >
+           
+          </motion.div>
+
+          <Link
+            href="https://github.com/Mauricio-Guerrero-Arciniegas"
+            target="_blank"
+          >
             <Github size={32} />
           </Link>
-          <Link href="https://www.linkedin.com/in/mauricio-guerrero-827582220/" target="_blank">
+          <Link
+            href="https://www.linkedin.com/in/mauricio-guerrero-827582220/"
+            target="_blank"
+          >
             <Linkedin size={32} />
           </Link>
         </div>

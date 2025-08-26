@@ -1,15 +1,19 @@
-
 .home {
   position: relative;
-  min-height: 100vh;
+  height: 100vh;         // siempre ocupar la pantalla completa
+  width: 100%;
+  overflow: hidden;      // evita scroll
   display: grid;
-  grid-template-columns: 1fr 1fr; // 50% + 50%
+  grid-template-columns: 1fr 1fr;
   background: url('../../public/images/wallpaper1.jpg') no-repeat center center;
   background-size: cover;
   background-attachment: fixed;
   color: white;
 }
 
+// ========================
+// Columna izquierda (Glass)
+// ========================
 .home__glass {
   display: flex;
   flex-direction: column;
@@ -21,35 +25,24 @@
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-right: 2px solid rgba(255, 255, 255, 0.2);
-   
 }
 
 .home__title {
   font-size: 3.5rem;
   font-weight: bold;
-  text-align: center;
   position: relative;
-  overflow: hidden; // necesario para el efecto máscara
-  display: inline-block;
+  overflow: hidden;
   white-space: nowrap;
   margin-bottom: 1rem;
 
-  @media (max-width: 768px) {
-    font-size: 2.5rem;
-  }
+  @media (max-width: 768px) { font-size: 2.5rem; }
+  @media (max-width: 480px) { font-size: 2rem; }
 
-  @media (max-width: 480px) {
-    font-size: 2rem;
-  }
-
-  // animación de máscara de izquierda a derecha
   &::after {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 0%;
+    top: 0; left: 0;
+    height: 100%; width: 0%;
     background: rgba(0, 0, 0, 0.9);
     animation: revealMask 2.5s ease-in-out forwards;
   }
@@ -65,7 +58,7 @@
   opacity: 0;
   transform: translateX(-50px);
   animation: textReveal 1.2s ease-out forwards;
-  animation-delay: 0.3s; // se dispara tras el inicio de la máscara
+  animation-delay: 0.3s;
 }
 
 @keyframes revealMask {
@@ -78,109 +71,64 @@
   100% { opacity: 1; transform: translateX(0); }
 }
 
-
-.home {
-  &__hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: calc(100vh - 80px);
-    padding: 2rem 1rem;
-    text-align: center;
-    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-    background-size: 200% 200%;
-    animation: gradientMove 8s ease infinite;
-  }
-
-  &__title {
-    
-    margin-bottom: 1rem;
-    color: white;
-
-    @media (min-width: 768px) {
-      font-size: 3rem;
-    }
-  }
-
-  &__text {
-    font-size: 1rem;
-    max-width: 90%;
-    margin-bottom: 2rem;
-    opacity: 0.9;
-    color: white;
-
-    @media (min-width: 768px) {
-      font-size: 1.2rem;
-      max-width: 600px;
-    }
-  }
-
-    &__buttons {
-    display: flex;
-    gap: 0.75rem;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  &__btn {
-    background: #fff;
-    color: #111; // ✅ contraste correcto
-    padding: 0.75rem 1.5rem;
-    border-radius: 0.75rem;
-    font-weight: 600;
-    text-decoration: none;
-    display: inline-block;
-    transition: all 0.3s ease;
-
-    &:hover {
-      background: #111;   // ✅ invertido en hover
-      color: #fff;
-      transform: translateY(-2px); // ✅ efecto lift
-    }
-
-    @media (min-width: 768px) {
-      padding: 0.75rem 1.5rem;
-      font-size: 1rem;
-    }
-  }
-
-  &__btn--secondary {
-    background: transparent;
-    border: 2px solid #fff;
-    color: #fff; // ✅ bordeado en blanco
-
-    &:hover {
-      background: #fff;
-      color: #111; // ✅ contraste al hover
-      transform: translateY(-2px);
-    }
-  
-  }
+.home__text {
+  font-size: 1rem;
+  max-width: 600px;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+  color: white;
 }
 
-@keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-.home__right {
+.home__buttons {
   display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+}
+
+.home__btn {
+  background: #fff;
+  color: #111;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: #111;
+    color: #fff;
+    transform: translateY(-2px);
+  }
+}
+
+.home__btn--secondary {
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+
+  &:hover {
+    background: #fff;
+    color: #111;
+  }
+}
+
+// ========================
+// Columna derecha (socials)
+// ========================
+.home__right {
+  position: relative; // referencia para iconos absolutos
 }
 
 .home__socials {
-  position: fixed;
-  bottom: 2rem;
+  position: absolute;
+  bottom: 6rem;
   right: 2rem;
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
-  z-index: 50;
+  align-items: center;
 
-  // animación de aparición desde la derecha
   animation: slideInRight 1.8s ease-out forwards;
 
   a {
@@ -195,12 +143,6 @@
 }
 
 @keyframes slideInRight {
-  0% {
-    opacity: 0;
-    transform: translateX(100%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  0% { opacity: 0; transform: translateX(100%); }
+  100% { opacity: 1; transform: translateX(0); }
 }

@@ -113,6 +113,22 @@
   }
 }
 
+.themeToggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text);
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: cyan;
+  }
+}
+
 .loader {
   display: flex;
   align-items: center;
