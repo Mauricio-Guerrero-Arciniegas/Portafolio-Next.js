@@ -2,19 +2,19 @@
 import { useLanguage } from '@/context/LanguageContext';
 
 export default function LanguageSwitcher() {
-  const { locale, setLocale } = useLanguage();
+  const { language, setLanguage } = useLanguage();
 
   return (
     <div>
       <button
-        onClick={() => setLocale('es')}
-        style={{ fontWeight: locale === 'es' ? 'bold' : 'normal' }}
+        onClick={() => setLanguage('es')}
+        style={{ fontWeight: language === 'es' ? 'bold' : 'normal' }}
       >
         🇪🇸
       </button>
       <button
-        onClick={() => setLocale('en')}
-        style={{ fontWeight: locale === 'en' ? 'bold' : 'normal' }}
+        onClick={() => setLanguage('en')}
+        style={{ fontWeight: language === 'en' ? 'bold' : 'normal' }}
       >
         🇬🇧
       </button>
