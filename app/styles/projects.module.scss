@@ -1,0 +1,91 @@
+.carousel {
+  display: flex;
+  flex-direction: column; /* para que abajo queden los puntos */
+  align-items: center;
+  gap: 1rem;
+}
+
+.carouselMain {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.carouselContent {
+  width: 600px;
+  max-width: 90%;
+  overflow: hidden;
+  border-radius: 1rem;
+  background: var(--color-bg);
+  padding: 1rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.slide {
+  text-align: center;
+}
+
+.image {
+  border-radius: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+
+  a {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    background: #3065c9;
+    color: white;
+    text-decoration: none;
+    transition: background 0.3s;
+
+    &:hover {
+      background: #204a90;
+    }
+  }
+}
+
+.arrow {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--color-text);
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+
+.indicators {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: gray;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.dot:hover {
+  background: #666;
+}
+
+.active {
+  background: #3065c9;
+}
