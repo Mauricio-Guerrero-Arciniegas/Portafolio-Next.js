@@ -1,8 +1,9 @@
 .home {
   position: relative;
-  height: 100vh;         // siempre ocupar la pantalla completa
+  height: 100vh;
+  height: 100dvh; // en navegadores modernos, iOS incluido
   width: 100%;
-  overflow: hidden;      // evita scroll
+  overflow: hidden;
   display: grid;
   grid-template-columns: 1fr 1fr;
   background: url('../../public/images/wallpaper1.jpg') no-repeat center center;
@@ -145,4 +146,15 @@
 @keyframes slideInRight {
   0% { opacity: 0; transform: translateX(100%); }
   100% { opacity: 1; transform: translateX(0); }
+}
+
+@media (max-width: 768px) {
+  .home {
+    grid-template-columns: 1fr; // solo una columna en móvil
+  }
+
+  .home__glass {
+    border-right: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  }
 }
