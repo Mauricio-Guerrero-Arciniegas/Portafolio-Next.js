@@ -15,22 +15,19 @@
     "title": "Acerca de mí",
     "experience": [
       {
-        "title": "Desarrollador Frontend",
-        "period": "2022 - Presente",
-        "description": "Trabajo en proyectos web usando React, Next.js y Tailwind, creando interfaces modernas y responsivas.",
-        "skills": ["React", "Next.js", "Tailwind", "Framer Motion"]
+        "title": "Ingeniero de Sistemas",
+        "description": "Apasionado por el desarrollo de software, la innovación tecnológica y la optimización de procesos. Me especializo en crear soluciones eficientes y escalables, combinando habilidades en programación, análisis de datos y gestión de proyectos. Me interesa el aprendizaje continuo y la aplicación de nuevas tecnologías para resolver problemas complejos y generar un impacto positivo en las organizaciones y en la sociedad.",
+        "skills": ["HTML", "CSS", "Javascript"]
       },
       {
-        "title": "Practicante de Desarrollo",
-        "period": "2021 - 2022",
-        "description": "Aprendí buenas prácticas de desarrollo web y participé en proyectos internos con JS y CSS.",
-        "skills": ["JavaScript", "HTML", "CSS"]
+        "title": "Graduado como desarrollador Fullstack",
+        "description": "Soy un desarrollador Fullstack, con formación en el diseño, desarrollo e implementación de aplicaciones web modernas. Tengo conocimientos sólidos en tecnologías tanto del frontend como del backend, y disfruto creando soluciones funcionales y eficientes. Me motiva seguir aprendiendo, enfrentar desafíos y contribuir en proyectos de Empresas de desarrollo.",
+        "skills": [ "React.js", "Next.js", "SASS", "Node.js", "Nest.js", "TypeScript", "AWS", "Git", "Docker", "Bases de datos SQL y NoSQL", "Metodologías ágiles", "GraphQL", "REST APIs", "Clean Code", "Patrones de diseño", "Arquitectura de software"]
       },
       {
-        "title": "Estudiante de Ingeniería",
-        "period": "2018 - 2021",
-        "description": "Formación en fundamentos de programación, estructuras de datos y desarrollo web.",
-        "skills": ["Algoritmos", "Estructuras de datos", "Git"]
+        "title": "Desarrollador Freelance",
+        "description": "Como desarrollador freelance, dedico mi tiempo a crear aplicaciones de manera independiente, con el objetivo de practicar mis conocimientos y explorar nuevas tecnologías. Mis proyectos reflejan mi aprendizaje continuo y mi capacidad para desarrollar soluciones funcionales que demuestran mi experiencia y creatividad en el desarrollo de software.",
+        "skills": ["Aplicaciones web", "Proyectos personales", "Nuevas tecnologías", "e-commerce", "fullstac"]
       }
     ]
   },

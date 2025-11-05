@@ -15,22 +15,19 @@
     "title": "About me",
     "experience": [
       {
-        "title": "Frontend Developer",
-        "period": "2022 - Present",
-        "description": "Working on web projects using React, Next.js, and Tailwind, creating modern and responsive interfaces.",
-        "skills": ["React", "Next.js", "Tailwind", "Framer Motion"]
+        "title": "Systems Engineer",
+        "description": "Passionate about software development, technological innovation, and process optimization. I specialize in creating efficient and scalable solutions, combining skills in programming, data analysis, and project management. I am committed to continuous learning and applying new technologies to solve complex problems and make a positive impact on organizations and society.",
+        "skills": ["HTML", "CSS", "JavaScript"]
       },
       {
-        "title": "Development Intern",
-        "period": "2021 - 2022",
-        "description": "Learned best web development practices and collaborated on internal JS and CSS projects.",
-        "skills": ["JavaScript", "HTML", "CSS"]
+        "title": "Fullstack Developer Graduate",
+        "description": "I am a Fullstack developer with training in designing, developing, and implementing modern web applications. I have solid knowledge in both frontend and backend technologies, and I enjoy creating functional and efficient solutions. I am motivated to keep learning, tackle challenges, and contribute to projects in development companies.",
+        "skills": ["React.js", "Next.js", "SASS", "Node.js", "Nest.js", "TypeScript", "AWS", "Git", "Docker", "SQL and NoSQL Databases", "Agile Methodologies", "GraphQL", "REST APIs", "Clean Code", "Design Patterns", "Software Architecture"]
       },
       {
-        "title": "Engineering Student",
-        "period": "2018 - 2021",
-        "description": "Training in programming fundamentals, data structures, and web development.",
-        "skills": ["Algorithms", "Data Structures", "Git"]
+        "title": "Freelance Developer",
+        "description": "As a freelance developer, I dedicate my time to building applications independently, aiming to practice my skills and explore new technologies. My projects reflect my continuous learning and ability to develop functional solutions that showcase my experience and creativity in software development.",
+        "skills": ["Web Applications", "Personal Projects", "New Technologies", "E-commerce", "Fullstack"]
       }
     ]
   },

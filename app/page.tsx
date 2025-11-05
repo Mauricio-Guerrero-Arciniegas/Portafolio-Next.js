@@ -17,7 +17,6 @@ export default function HomePage() {
 
   return (
     <main className={styles.home}>
-      {/* Íconos superiores */}
       <div className={styles.home__socialsTop}>
         <Link href="https://github.com/Mauricio-Guerrero-Arciniegas" target="_blank">
           <Github size={28} />
@@ -28,7 +27,6 @@ export default function HomePage() {
         
       </div>
 
-      {/* Columna izquierda */}
       <motion.section
         className={styles.home__glass}
         initial={{ opacity: 0, x: -100 }}

@@ -21,8 +21,7 @@ export default function AboutPage() {
     <Server key="server" size={20} />
   ];
 
-  // Tipamos la experiencia como un array de Experience
-  const experiences: Experience[] = t.about.experience;
+  const experiences = t.about.experience as Experience[];
 
   return (
     <section className={styles.about}>
