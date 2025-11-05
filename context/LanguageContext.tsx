@@ -1,6 +1,5 @@
 'use client';
-
-import { createContext, useContext, useState, ReactNode } from 'react';
+import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import es from '@/locales/es.json';
 import en from '@/locales/en.json';
 
@@ -17,6 +16,18 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [language, setLanguage] = useState<Locale>('es');
+
+  // ✅ Cargar idioma guardado (solo en cliente)
+  useEffect(() => {
+    const storedLang = localStorage.getItem('lang') as Locale | null;
+    if (storedLang) setLanguage(storedLang);
+  }, []);
+
+  // ✅ Guardar idioma cuando cambie
+  useEffect(() => {
+    localStorage.setItem('lang', language);
+  }, [language]);
+
   const translations = language === 'es' ? es : en;
 
   return (

@@ -10,32 +10,43 @@ export default function HomePage() {
   const { t } = useLanguage();
   const title = t.home.title;
 
+  const letterVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   return (
     <main className={styles.home}>
-      {/* 🔹 Columna izquierda */}
+      {/* Íconos superiores */}
+      <div className={styles.home__socialsTop}>
+        <Link href="https://github.com/Mauricio-Guerrero-Arciniegas" target="_blank">
+          <Github size={28} />
+        </Link>
+        <Link href="https://www.linkedin.com/in/mauricio-guerrero-827582220/" target="_blank">
+          <Linkedin size={28} />
+        </Link>
+        
+      </div>
+
+      {/* Columna izquierda */}
       <motion.section
         className={styles.home__glass}
         initial={{ opacity: 0, x: -100 }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.8 }}
       >
-        <h1 className={styles.home__title}>
-          <motion.span
-            initial={{ width: 0 }}
-            animate={{ width: "100%" }}
-            transition={{ duration: 1.2, ease: "easeInOut" }}
-            className={styles.home__titleWrapper}
-          >
-            <motion.span
-              initial={{ x: -50, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 1.2, ease: "easeOut" }}
-              className={styles.home__letter}
-            >
-              {title}
+        <motion.h1
+          className={styles.home__title}
+          initial="hidden"
+          animate="visible"
+          variants={{ visible: { transition: { staggerChildren: 0.05 } } }}
+        >
+          {title.split('').map((letter, i) => (
+            <motion.span key={i} variants={letterVariants} className={styles.home__letter}>
+              {letter}
             </motion.span>
-          </motion.span>
-        </h1>
+          ))}
+        </motion.h1>
 
         <p className={styles.home__text}>{t.home.subtitle}</p>
 
@@ -51,32 +62,6 @@ export default function HomePage() {
           </Link>
         </div>
       </motion.section>
-
-      {/* 🔹 Columna derecha (iconos sociales con flecha animada) */}
-      <div className={styles.home__right}>
-        <div className={styles.home__socials}>
-          <motion.div
-            className={styles.home__arrow}
-            animate={{ y: [0, -10, 0] }}
-            transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
-          >
-           
-          </motion.div>
-
-          <Link
-            href="https://github.com/Mauricio-Guerrero-Arciniegas"
-            target="_blank"
-          >
-            <Github size={32} />
-          </Link>
-          <Link
-            href="https://www.linkedin.com/in/mauricio-guerrero-827582220/"
-            target="_blank"
-          >
-            <Linkedin size={32} />
-          </Link>
-        </div>
-      </div>
     </main>
   );
 }

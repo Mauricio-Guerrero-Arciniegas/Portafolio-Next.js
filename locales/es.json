@@ -6,9 +6,42 @@
     "contact": "Contacto"
   },
   "home": {
-  "title": "Mauricio Guerrero A.",
-  "subtitle": "Ingniero de Sistemas - Desarrollador web enfocado en crear experiencias digitales modernas y atractivas.",
-  "ctaProjects": "Ver proyectos",
-  "ctaContact": "Contáctame"
+    "title": "Mauricio Guerrero A.",
+    "subtitle": "Ingeniero de Sistemas - Desarrollador web enfocado en crear experiencias digitales modernas y atractivas.",
+    "ctaProjects": "Ver proyectos",
+    "ctaContact": "Contáctame"
+  },
+  "about": {
+    "title": "Acerca de mí",
+    "experience": [
+      {
+        "title": "Desarrollador Frontend",
+        "period": "2022 - Presente",
+        "description": "Trabajo en proyectos web usando React, Next.js y Tailwind, creando interfaces modernas y responsivas.",
+        "skills": ["React", "Next.js", "Tailwind", "Framer Motion"]
+      },
+      {
+        "title": "Practicante de Desarrollo",
+        "period": "2021 - 2022",
+        "description": "Aprendí buenas prácticas de desarrollo web y participé en proyectos internos con JS y CSS.",
+        "skills": ["JavaScript", "HTML", "CSS"]
+      },
+      {
+        "title": "Estudiante de Ingeniería",
+        "period": "2018 - 2021",
+        "description": "Formación en fundamentos de programación, estructuras de datos y desarrollo web.",
+        "skills": ["Algoritmos", "Estructuras de datos", "Git"]
+      }
+    ]
+  },
+  "contact": {
+  "title": "Contáctame",
+  "name": "Tu nombre",
+  "message": "Tu mensaje",
+  "send": "Enviar por WhatsApp"
+},
+"projects": {
+  "title": "Proyectos",
+  "subtitle": "Algunos de mis trabajos recientes"
 }
 }

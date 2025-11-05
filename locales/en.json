@@ -6,9 +6,42 @@
     "contact": "Contact"
   },
   "home": {
-  "title": "Mauricio Guerrero A.",
-  "subtitle": "Systems Engineer - Web developer focused on creating modern and engaging digital experiences.",
-  "ctaProjects": "View projects",
-  "ctaContact": "Contact me"
+    "title": "Mauricio Guerrero A.",
+    "subtitle": "Systems Engineer - Web developer focused on creating modern and engaging digital experiences.",
+    "ctaProjects": "View projects",
+    "ctaContact": "Contact me"
+  },
+  "about": {
+    "title": "About me",
+    "experience": [
+      {
+        "title": "Frontend Developer",
+        "period": "2022 - Present",
+        "description": "Working on web projects using React, Next.js, and Tailwind, creating modern and responsive interfaces.",
+        "skills": ["React", "Next.js", "Tailwind", "Framer Motion"]
+      },
+      {
+        "title": "Development Intern",
+        "period": "2021 - 2022",
+        "description": "Learned best web development practices and collaborated on internal JS and CSS projects.",
+        "skills": ["JavaScript", "HTML", "CSS"]
+      },
+      {
+        "title": "Engineering Student",
+        "period": "2018 - 2021",
+        "description": "Training in programming fundamentals, data structures, and web development.",
+        "skills": ["Algorithms", "Data Structures", "Git"]
+      }
+    ]
+  },
+  "contact": {
+  "title": "Contact me",
+  "name": "Your name",
+  "message": "Your message",
+  "send": "Send via WhatsApp"
+},
+"projects": {
+  "title": "Projects",
+  "subtitle": "Some of my recent work"
 }
 }

@@ -18,19 +18,20 @@
 
 /* HTML y body ocupan toda la pantalla y bloquean scroll */
 html, body {
-  height: 100%;
   width: 100%;
-  overflow: hidden;  /* 👈 Bloquea scroll */
+  min-height: 100vh;          /* deja crecer la página */
+  overflow-x: hidden;         /* evita scroll horizontal */
+  overflow-y: auto;           /* permite scroll vertical */
   background-color: var(--color-bg);
   color: var(--color-text);
   font-family: sans-serif;
+  scroll-behavior: smooth;    /* desplazamiento suave */
 }
 
 /* Contenedor principal de Home */
 #home {
   height: 100vh;      /* 👈 altura exacta de la ventana */
   width: 100vw;       /* 👈 ancho completo */
-  overflow: hidden;   /* 👈 asegura que no aparezca scroll interno */
   display: flex;      /* opcional: para centrar contenido */
   flex-direction: column;
   justify-content: center;

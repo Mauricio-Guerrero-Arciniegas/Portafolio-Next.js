@@ -10,10 +10,10 @@ export default function Navbar() {
   const { t, setLanguage, language } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
 
-  // Rutas de banderas
-  const getFlag = () => {
-    return language === 'es' ? '/flags/en.png' : '/flags/es.png';
-  };
+  const getFlag = () => (language === 'es' ? '/flags/en.png' : '/flags/es.png');
+
+  const toggleMenu = () => setIsOpen(!isOpen);
+  const closeMenu = () => setIsOpen(false);
 
   return (
     <header className={styles.navbar}>
@@ -37,21 +37,19 @@ export default function Navbar() {
         </svg>
       </Link>
 
-      {/* Desktop links */}
       <nav className={styles.navbar__links}>
         <Link href="/">{t.navbar.home}</Link>
         <Link href="/about">{t.navbar.about}</Link>
         <Link href="/projects">{t.navbar.projects}</Link>
         <Link href="/contact">{t.navbar.contact}</Link>
 
-        {/* Botón cambio idioma con animación */}
         <button
           onClick={() => setLanguage(language === 'es' ? 'en' : 'es')}
           className={styles.navbar__lang}
         >
           <AnimatePresence mode="wait" initial={false}>
             <motion.img
-              key={language} // cambia cada vez que cambia el idioma
+              key={language}
               src={getFlag()}
               alt={language === 'es' ? 'Español' : 'English'}
               className={styles.navbar__flag}
@@ -69,7 +67,7 @@ export default function Navbar() {
       {/* Botón hamburguesa */}
       <button
         className={styles.navbar__toggle}
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={toggleMenu}
         aria-label="Toggle menu"
       >
         <span />
@@ -77,52 +75,60 @@ export default function Navbar() {
         <span />
       </button>
 
-      {/* Menú móvil */}
+      {/* Overlay y menú móvil */}
       <AnimatePresence>
         {isOpen && (
-          <motion.nav
-            className={styles.navbar__mobile}
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-          >
-            <Link href="/" onClick={() => setIsOpen(false)}>
-              {t.navbar.home}
-            </Link>
-            <Link href="/about" onClick={() => setIsOpen(false)}>
-              {t.navbar.about}
-            </Link>
-            <Link href="/projects" onClick={() => setIsOpen(false)}>
-              {t.navbar.projects}
-            </Link>
-            <Link href="/contact" onClick={() => setIsOpen(false)}>
-              {t.navbar.contact}
-            </Link>
+          <>
+            {/* Overlay */}
+            <motion.div
+              className={styles.overlay}
+              onClick={closeMenu}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.3 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+            />
 
-            {/* Botón cambio idioma en móvil */}
-            <button
-              onClick={() => {
-                setLanguage(language === 'es' ? 'en' : 'es');
-                setIsOpen(false);
-              }}
-              className={styles.navbar__lang}
+            {/* Menú móvil */}
+            <motion.nav
+              className={styles.navbar__mobile}
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
             >
-              <AnimatePresence mode="wait" initial={false}>
-                <motion.img
-                  key={language}
-                  src={getFlag()}
-                  alt={language === 'es' ? 'Español' : 'English'}
-                  className={styles.navbar__flag}
-                  initial={{ rotateY: 90, opacity: 0 }}
-                  animate={{ rotateY: 0, opacity: 1 }}
-                  exit={{ rotateY: -90, opacity: 0 }}
-                  transition={{ duration: 0.4 }}
-                />
-              </AnimatePresence>
-            </button>
+              <Link href="/" onClick={closeMenu}>{t.navbar.home}</Link>
+              <Link href="/about" onClick={closeMenu}>{t.navbar.about}</Link>
+              <Link href="/projects" onClick={closeMenu}>{t.navbar.projects}</Link>
+              <Link href="/contact" onClick={closeMenu}>{t.navbar.contact}</Link>
 
-            <ThemeToggle />
-          </motion.nav>
+              {/* Contenedor horizontal para acciones */}
+              <div className={styles.navbar__mobile__actions}>
+                <button
+                  onClick={() => {
+                    setLanguage(language === 'es' ? 'en' : 'es');
+                    closeMenu();
+                  }}
+                  className={styles.navbar__lang}
+                >
+                  <AnimatePresence mode="wait" initial={false}>
+                    <motion.img
+                      key={language}
+                      src={getFlag()}
+                      alt={language === 'es' ? 'Español' : 'English'}
+                      className={styles.navbar__flag}
+                      initial={{ rotateY: 90, opacity: 0 }}
+                      animate={{ rotateY: 0, opacity: 1 }}
+                      exit={{ rotateY: -90, opacity: 0 }}
+                      transition={{ duration: 0.4 }}
+                    />
+                  </AnimatePresence>
+                </button>
+
+                <ThemeToggle />
+              </div>
+            </motion.nav>
+          </>
         )}
       </AnimatePresence>
     </header>

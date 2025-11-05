@@ -1,20 +1,47 @@
 .home {
-  position: relative;
-  height: 100vh;
-  height: 100dvh; // en navegadores modernos, iOS incluido
-  width: 100%;
-  overflow: hidden;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  width: 100%;
+  height: 90dvh;
+  overflow: hidden;
   background: url('../../public/images/wallpaper1.jpg') no-repeat center center;
   background-size: cover;
-  background-attachment: fixed;
-  color: white;
+  color: rgb(236, 204, 204);
+  position: relative;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 }
 
-// ========================
-// Columna izquierda (Glass)
-// ========================
+/* ======= Redes Superiores ======= */
+.home__socialsTop {
+  position: absolute;
+  top: 1.5rem;
+  right: 3rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  z-index: 1;
+
+  a {
+    color: white;
+    transition: transform 0.3s ease, color 0.3s ease;
+
+    &:hover {
+      color: cyan;
+      transform: translateY(-2px) scale(1.15);
+    }
+  }
+
+  @media (max-width: 768px) {
+    position: static;
+    justify-content: center;
+    margin: 1rem 0;
+  }
+}
+
+/* ======= Contenido Izquierdo ======= */
 .home__glass {
   display: flex;
   flex-direction: column;
@@ -24,29 +51,23 @@
   padding: 2rem;
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
   border-right: 2px solid rgba(255, 255, 255, 0.2);
+
+  @media (max-width: 768px) {
+    border-right: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  }
 }
 
 .home__title {
   font-size: 3.5rem;
   font-weight: bold;
-  position: relative;
+  margin-bottom: 1rem;
   overflow: hidden;
   white-space: nowrap;
-  margin-bottom: 1rem;
 
   @media (max-width: 768px) { font-size: 2.5rem; }
   @media (max-width: 480px) { font-size: 2rem; }
-
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    height: 100%; width: 0%;
-    background: rgba(0, 0, 0, 0.9);
-    animation: revealMask 2.5s ease-in-out forwards;
-  }
 }
 
 .home__letter {
@@ -56,20 +77,6 @@
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  opacity: 0;
-  transform: translateX(-50px);
-  animation: textReveal 1.2s ease-out forwards;
-  animation-delay: 0.3s;
-}
-
-@keyframes revealMask {
-  0% { width: 100%; left: 0; }
-  100% { width: 0%; left: 100%; }
-}
-
-@keyframes textReveal {
-  0% { opacity: 0; transform: translateX(-50px); }
-  100% { opacity: 1; transform: translateX(0); }
 }
 
 .home__text {
@@ -77,7 +84,6 @@
   max-width: 600px;
   margin-bottom: 2rem;
   opacity: 0.9;
-  color: white;
 }
 
 .home__buttons {
@@ -111,50 +117,5 @@
   &:hover {
     background: #fff;
     color: #111;
-  }
-}
-
-// ========================
-// Columna derecha (socials)
-// ========================
-.home__right {
-  position: relative; // referencia para iconos absolutos
-}
-
-.home__socials {
-  position: absolute;
-  bottom: 6rem;
-  right: 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-  align-items: center;
-
-  animation: slideInRight 1.8s ease-out forwards;
-
-  a {
-    color: white;
-    transition: transform 0.3s ease, color 0.3s ease;
-
-    &:hover {
-      color: cyan;
-      transform: translateY(-3px) scale(1.15);
-    }
-  }
-}
-
-@keyframes slideInRight {
-  0% { opacity: 0; transform: translateX(100%); }
-  100% { opacity: 1; transform: translateX(0); }
-}
-
-@media (max-width: 768px) {
-  .home {
-    grid-template-columns: 1fr; // solo una columna en móvil
-  }
-
-  .home__glass {
-    border-right: none;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
   }
 }

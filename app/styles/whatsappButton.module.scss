@@ -1,0 +1,78 @@
+.whatsapp {
+  position: fixed;
+  top: 5.5rem;
+  left: 1.2rem;
+  background: #25d366; /* color oficial de WhatsApp */
+  color: white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  z-index: 1500;
+  transition: background 0.3s ease, transform 0.2s ease;
+
+  /* Animación de pulso */
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: rgba(37, 211, 102, 0.45);
+    animation: pulse 1s infinite; /* 💨 más rápido */
+    z-index: -1;
+  }
+
+  &:hover {
+    background: #1ebe5b;
+  }
+
+  .icon {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* 🌙 Modo oscuro */
+[data-theme='dark'] .whatsapp {
+  background: #20b858;
+
+  &::after {
+    background: rgba(32, 184, 88, 0.4);
+  }
+}
+
+/* 💡 Pulso más brillante y rápido */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+/* 📱 Responsive */
+@media (max-width: 600px) {
+  .whatsapp {
+    width: 40px;
+    height: 40px;
+    top: 5rem;
+    left: 1rem;
+
+    .icon {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}

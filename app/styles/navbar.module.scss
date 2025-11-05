@@ -7,7 +7,7 @@
   color: var(--color-text);
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 2000;
 
   &__logo a {
     font-weight: bold;
@@ -148,4 +148,34 @@
     transform: scale(1.1);
     filter: drop-shadow(0 0 6px #00e1ff);
   }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: black;
+  opacity: 0.3;
+  z-index: 999; // overlay debajo del menú
+}
+
+.navbar__mobile {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 1.5rem;
+  background: var(--color-bg);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 1000; // menú encima del overlay
+}
+.navbar__mobile__actions {
+  display: flex;
+  gap: 1rem; // espacio entre botones
+  margin-top: 0.5rem;
+  align-items: center; // centra verticalmente
 }

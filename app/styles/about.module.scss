@@ -1,0 +1,248 @@
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem 1rem;
+  width: 100%;
+  min-height: 100vh;
+  overflow-y: auto; /* ✅ Scroll vertical habilitado */
+  background: radial-gradient(circle at top, rgba(0, 255, 255, 0.08), transparent 70%);
+  backdrop-filter: blur(8px);
+  color: var(--color-text);
+  scroll-behavior: smooth;
+  position: relative;
+}
+
+/* ================================
+   TÍTULO
+   ================================ */
+
+.about__title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 2rem 0;
+  background: linear-gradient(90deg, #00ffff, #0077ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  z-index: 2;
+  animation: fadeInTitle 1.2s ease forwards;
+
+  @keyframes fadeInTitle {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 768px) {
+    font-size: 2.2rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.8rem;
+  }
+}
+
+/* ================================
+   CONTENEDOR DE EXPERIENCIAS
+   ================================ */
+
+.about__content {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem 0 3rem;
+  position: relative;
+
+  /* Línea del timeline */
+  &::before {
+    content: "";
+    position: absolute;
+    left: 1.5rem;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, #00ffff, #0077ff);
+    opacity: 0.5;
+    animation: linePulse 1s ease-in-out infinite alternate;
+  }
+
+  @keyframes linePulse {
+  0% {
+    opacity: 0.5;
+    filter: drop-shadow(0 0 4px #00ffff);
+  }
+  100% {
+    opacity: 1;
+    filter: drop-shadow(0 0 12px #00ffff); /* 💥 más brillante en el pico */
+  }
+}
+
+  @media (max-width: 600px) {
+    &::before {
+      left: 0.8rem;
+    }
+  }
+}
+
+/* ================================
+   TARJETA INDIVIDUAL
+   ================================ */
+
+.timeline__item {
+  position: relative;
+  margin-left: 3rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 4px solid #00ffff;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  overflow: hidden;
+
+  /* 🔵 Conector circular */
+  &::before {
+    content: "";
+    position: absolute;
+    left: -1.15rem;
+    top: 1.2rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #00ffff;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(0, 255, 255, 0.2);
+    border-color: #00ffff;
+    background: rgba(255, 255, 255, 0.08);
+
+    &::before {
+      transform: scale(1.3);
+    }
+  }
+
+  @media (max-width: 768px) {
+    margin-left: 2.5rem;
+    padding: 1rem;
+
+    &::before {
+      left: -1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    margin-left: 1.8rem;
+    padding: 0.8rem;
+
+    &::before {
+      left: -0.8rem;
+    }
+  }
+}
+
+/* ================================
+   CONTENIDO DE LA TARJETA
+   ================================ */
+
+.timeline__item h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #00ffff;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
+  }
+}
+
+.timeline__item span {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.timeline__item p {
+  margin-top: 0.5rem;
+  line-height: 1.5;
+  font-size: 1rem;
+
+  @media (max-width: 480px) {
+    font-size: 0.9rem;
+  }
+}
+
+/* ================================
+   HABILIDADES (SKILLS)
+   ================================ */
+
+.timeline__skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.timeline__skill {
+  background: rgba(0, 255, 255, 0.15);
+  padding: 0.3rem 0.7rem;
+  border-radius: 0.5rem;
+  font-size: 0.8rem;
+  color: #00ffff;
+  transition: background 0.3s;
+
+  &:hover {
+    background: rgba(0, 255, 255, 0.3);
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.7rem;
+  }
+}
+
+/* ================================
+   MODO OSCURO / CLARO
+   ================================ */
+
+[data-theme='dark'] .about {
+  background: radial-gradient(circle at top, rgba(0, 255, 255, 0.08), transparent 70%);
+  color: #ffffff;
+}
+
+[data-theme='light'] .about {
+  background: linear-gradient(135deg, #e3f2fd, #f9ffff);
+  color: #000000;
+
+  .timeline__item {
+    background: rgba(0, 0, 0, 0.05);
+    border-left: 4px solid #0077ff;
+  }
+
+  .timeline__skill {
+    background: rgba(0, 119, 255, 0.1);
+    color: #0077ff;
+  }
+
+  .about__content::before {
+    background: linear-gradient(to bottom, #0077ff, #00bfff);
+  }
+}
