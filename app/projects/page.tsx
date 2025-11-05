@@ -11,7 +11,7 @@ const projects = [
       es: 'Un portafolio personal con Next.js y SCSS modules.',
       en: 'A personal portfolio built with Next.js and SCSS modules.',
     },
-    image: '/images/p1.png',
+    image: '/images/projects/p4.png',
     demo: 'https://miportafolio.com',
     code: 'https://github.com/usuario/portfolio',
   },
@@ -21,7 +21,7 @@ const projects = [
       es: 'Aplicación del clima usando API de OpenWeather.',
       en: 'Weather app using OpenWeather API.',
     },
-    image: '/images/p2.png',
+    image: '/images/projects/p2.png',
     demo: 'https://weatherapp.com',
     code: 'https://github.com/usuario/weatherapp',
   },
@@ -31,17 +31,25 @@ const projects = [
       es: 'Tienda online con carrito y pasarela de pagos.',
       en: 'Online store with cart and payment gateway.',
     },
-    image: '/images/project3.jpg',
+    image: '/images/projects/p3.png',
     demo: 'https://ecommerce.com',
     code: 'https://github.com/usuario/ecommerce',
   },
-  // Agrega más proyectos aquí
+  {
+    title: 'Portfolio Website2',
+    description: {
+      es: 'Un portafolio personal con Next.js y SCSS modules.',
+      en: 'A personal portfolio built with Next.js and SCSS modules.',
+    },
+    image: '/images/projects/p1.png',
+    demo: 'https://miportafolio.com',
+    code: 'https://github.com/usuario/portfolio',
+  },
 ];
 
 export default function ProjectsPage() {
   const { t, language } = useLanguage();
 
-  // Mapear los proyectos agregando la descripción según el idioma
   const projectsLocalized = projects.map((p) => ({
     ...p,
     description: p.description[language],

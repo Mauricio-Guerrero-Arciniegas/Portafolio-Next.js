@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { useState } from "react";
 import styles from "../app/styles/projects.module.scss";
@@ -39,11 +39,8 @@ export default function Carousel({ projects }: CarouselProps) {
 
   return (
     <div className={styles.carousel}>
-      {/* Flechas a los lados */}
       <div className={styles.carouselMain}>
-        <button onClick={prevSlide} className={styles.arrow}>
-          {"<"}
-        </button>
+        <button onClick={prevSlide} className={styles.arrow}>{"<"}</button>
 
         <div className={styles.carouselContent}>
           <AnimatePresence mode="wait" custom={direction}>
@@ -54,16 +51,6 @@ export default function Carousel({ projects }: CarouselProps) {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: direction > 0 ? -100 : 100 }}
               transition={{ type: "spring", stiffness: 300, damping: 25 }}
-              drag="x"
-              dragConstraints={{ left: 0, right: 0 }}
-              dragElastic={0.7}
-              onDragEnd={(_, info) => {
-                if (info.offset.x < -50) {
-                  nextSlide();
-                } else if (info.offset.x > 50) {
-                  prevSlide();
-                }
-              }}
               className={styles.slide}
             >
               <Image
@@ -76,10 +63,10 @@ export default function Carousel({ projects }: CarouselProps) {
               <h2>{projects[current].title}</h2>
               <p>{projects[current].description}</p>
               <div className={styles.buttons}>
-                <a href={projects[current].demo} target="_blank">
+                <a href={projects[current].demo} target="_blank" rel="noreferrer">
                   <ExternalLink size={18} /> Demo
                 </a>
-                <a href={projects[current].code} target="_blank">
+                <a href={projects[current].code} target="_blank" rel="noreferrer">
                   <Github size={18} /> Código
                 </a>
               </div>
@@ -87,19 +74,14 @@ export default function Carousel({ projects }: CarouselProps) {
           </AnimatePresence>
         </div>
 
-        <button onClick={nextSlide} className={styles.arrow}>
-          {">"}
-        </button>
+        <button onClick={nextSlide} className={styles.arrow}>{">"}</button>
       </div>
 
-      {/* Puntos de navegación debajo */}
       <div className={styles.indicators}>
         {projects.map((_, index) => (
           <button
             key={index}
-            className={`${styles.dot} ${
-              index === current ? styles.active : ""
-            }`}
+            className={`${styles.dot} ${index === current ? styles.active : ''}`}
             onClick={() => goToSlide(index)}
           />
         ))}
