@@ -7,7 +7,7 @@
   background: url('../../public/images/wallpaper1.jpg') no-repeat center center;
   background-size: cover;
   color: rgb(236, 204, 204);
-  position: relative;
+  position: relative; 
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
