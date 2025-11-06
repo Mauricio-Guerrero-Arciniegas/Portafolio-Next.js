@@ -12,7 +12,7 @@ interface Project {
   image: string;
   demo: string;
   code: string;
-  technologies?: string[]; // ✅ agregado
+  technologies?: string[];
 }
 
 interface CarouselProps {
@@ -22,6 +22,8 @@ interface CarouselProps {
 export default function Carousel({ projects }: CarouselProps) {
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState(0);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
 
   const nextSlide = () => {
     setDirection(1);
@@ -38,6 +40,27 @@ export default function Carousel({ projects }: CarouselProps) {
     setCurrent(index);
   };
 
+  // 👇 Detectar swipe
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+
+    const distance = touchStart - touchEnd;
+
+    if (distance > 50) nextSlide(); // deslizar izquierda → siguiente
+    if (distance < -50) prevSlide(); // deslizar derecha → anterior
+
+    setTouchStart(null);
+    setTouchEnd(null);
+  };
+
   const project = projects[current];
 
   return (
@@ -45,7 +68,12 @@ export default function Carousel({ projects }: CarouselProps) {
       <div className={styles.carouselMain}>
         <button onClick={prevSlide} className={styles.arrow}>{"<"}</button>
 
-        <div className={styles.carouselContent}>
+        <div
+          className={styles.carouselContent}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
           <AnimatePresence mode="wait" custom={direction}>
             <motion.div
               key={current}
@@ -68,7 +96,6 @@ export default function Carousel({ projects }: CarouselProps) {
                 <h2>{project.title}</h2>
                 <p>{project.description}</p>
 
-
                 <div className={styles.buttons}>
                   <a href={project.demo} target="_blank" rel="noreferrer">
                     <ExternalLink size={18} /> Demo
@@ -77,6 +104,7 @@ export default function Carousel({ projects }: CarouselProps) {
                     <Github size={18} /> Código
                   </a>
                 </div>
+
                 {project.technologies && (
                   <div className={styles.techList}>
                     {project.technologies.map((tech) => (

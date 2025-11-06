@@ -56,7 +56,7 @@ const projects = [
       es: 'Copia exacta de la pantalla inicial de Game Awards 2022 con el fin de aplicar y practicar conocimientos avanzados de Layout CSS',
       en: 'A personal portfolio built with Next.js and SCSS modules.',
     },
-    image: '/images/projects/p5.png',
+    image: '/images/projects/p6.png',
     demo: 'https://the-game-awards.netlify.app/',
     code: 'https://github.com/Mauricio-Guerrero-Arciniegas/The_Game_Awards',
     technologies: ['React.js', 'Vite', 'Javascript', 'Framer Motion', 'Lucide React', 'SCSS', 'BEM', 'SASS', 'CSS-preprocesor' ]
@@ -67,7 +67,7 @@ const projects = [
       es: 'Copia exacta de la pantalla inicial de Tinder con el fin de aplicar y practicar conocimientos avanzados de Layout CSS',
       en: 'A personal portfolio built with Next.js and SCSS modules.',
     },
-    image: '/images/projects/p6.png',
+    image: '/images/projects/p7.png',
     demo: 'https://tinder-copy.netlify.app/',
     code: 'https://github.com/Mauricio-Guerrero-Arciniegas/Tinder-clone',
     technologies: ['React.js', 'Vite', 'Javascript', 'Framer Motion', 'Lucide React', 'SCSS', 'BEM', 'SASS', 'CSS-preprocesor' ]
@@ -78,7 +78,7 @@ const projects = [
       es: 'Copia exacta de la pantalla inicial de Avatar - The Way of Water con el fin de aplicar y practicar conocimientos avanzados de Layout CSS',
       en: 'A personal portfolio built with Next.js and SCSS modules.',
     },
-    image: '/images/projects/p7.png',
+    image: '/images/projects/p5.png',
     demo: 'https://avatar-the-way-of-water.netlify.app/',
     code: 'https://github.com/Mauricio-Guerrero-Arciniegas/Avatar-The-way-of-Water',
     technologies: ['React.js', 'Vite', 'Javascript', 'Framer Motion', 'Lucide React', 'SCSS', 'BEM', 'SASS', 'CSS-preprocesor']
@@ -89,10 +89,43 @@ const projects = [
       es: 'Aplicacion para obtener datos del clima conectada a la API de Open Weather',
       en: 'A personal portfolio built with Next.js and SCSS modules.',
     },
-    image: '/images/projects/p7.png',
-    demo: 'https://avatar-the-way-of-water.netlify.app/',
-    code: 'https://github.com/Mauricio-Guerrero-Arciniegas/Portafolio-Next.js',
-    technologies: ['React.js', 'Vite', 'Javascript', 'Framer Motion', 'Lucide React', 'SCSS', 'BEM', 'SASS', 'CSS-preprocesor']
+    image: '/images/projects/p8.png',
+    demo: 'https://weather-assistant-app.netlify.app/',
+    code: 'https://github.com/Mauricio-Guerrero-Arciniegas/Weather-Assistant',
+    technologies: ['React.js', 'Next.js', 'typescript', 'Javascript', 'Framer Motion', 'SCSS', 'BEM', 'SASS']
+  },
+  {
+    title: 'CRUD de Peliculas',
+    description: {
+      es: 'Aplicacion CRUD usando localStorage para almacenar la informacion, funcionalidad completa.',
+      en: 'A personal portfolio built with Next.js and SCSS modules.',
+    },
+    image: '/images/projects/p9.png',
+    demo: 'https://movies-crud-app.netlify.app/',
+    code: 'https://github.com/Mauricio-Guerrero-Arciniegas/movies-CRUD',
+    technologies: ['React.js', 'Next.js', 'typescript', 'Javascript', 'Framer Motion', 'SCSS', 'BEM']
+  },
+  {
+    title: 'Homeopathy SPA',
+    description: {
+      es: 'Single Page Aplication para una clinica de homeopatia, con formulario de contacto y secciones informativas.',
+      en: 'A personal portfolio built with Next.js and SCSS modules.',
+    },
+    image: '/images/projects/p11.png',
+    demo: 'https://homeopathy-web.netlify.app/',
+    code: 'https://github.com/Mauricio-Guerrero-Arciniegas/homeophatics-webpage-beta',
+    technologies: ['React.js', 'Javascript', 'SCSS', 'BEM']
+  },
+  {
+    title: 'Calculadora',
+    description: {
+      es: 'Calculadora funcional usando claymorfism para su parte visual - practica de logica Javascript y CSS',
+      en: 'A personal portfolio built with Next.js and SCSS modules.',
+    },
+    image: '/images/projects/p10.png',
+    demo: 'https://calculator-javascript-css.netlify.app/',
+    code: 'https://github.com/Mauricio-Guerrero-Arciniegas/Calculator',
+    technologies: ['React.js', 'Javascript', 'CSS']
   },
 ];
 

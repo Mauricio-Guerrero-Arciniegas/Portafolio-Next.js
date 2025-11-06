@@ -34,39 +34,33 @@
 }
 
 .carouselContent {
-  width: 600px;
-  max-width: 90%;
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
   overflow: hidden;
+  border-radius: 1rem;
+  min-height: 400px; // 👈 asegura un tamaño base pero deja crecer
 }
 
 .slide {
-  text-align: center;
-  border-radius: 0.75rem;
-  background: var(--color-bg-secondary, rgba(255, 255, 255, 0.05));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
   padding: 1rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  transition: transform 0.3s ease;
-
-  &:hover {
-    transform: scale(1.03);
-  }
-
-  h2 {
-    font-size: 1.3rem;
-    margin-bottom: 0.5rem;
-  }
-
-  p {
-    font-size: 1rem;
-    margin-bottom: 0.8rem;
-  }
+  border-radius: 1rem;
+  overflow: visible; // 👈 importante: permite que se vea todo el contenido
 }
 
 .image {
   width: 100%;
-  border-radius: 0.5rem;
-  object-fit: cover;
-  margin-bottom: 0.5rem;
+  height: 100%;
+  object-fit: cover; // hace que la imagen ocupe todo el contenedor sin deformarse
+  object-position: center; // centra la parte más relevante
+  border-radius: 1rem;
 }
 
 .buttons {
