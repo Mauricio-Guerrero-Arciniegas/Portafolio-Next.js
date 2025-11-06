@@ -3,6 +3,19 @@ import { ThemeProvider } from 'next-themes';
 import Navbar from '@/components/Navbar';
 import { LanguageProvider } from '@/context/LanguageContext';
 import WhatsAppButton from '@/components/WhatsAppButton'; 
+import { Oswald, Roboto } from 'next/font/google';
+
+const oswald = Oswald({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-oswald',
+});
+
+const roboto = Roboto({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '700'],
+  variable: '--font-roboto',
+});
 
 export const metadata = {
   title: 'Portafolio Mauricio Guerrero',
@@ -11,8 +24,12 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es" suppressHydrationWarning>
-      <body>
+    <html
+      lang="es"
+      className={`${oswald.variable} ${roboto.variable}`}
+      suppressHydrationWarning
+    >
+      <body className={roboto.className}>
         <ThemeProvider attribute="data-theme">
           <LanguageProvider>
             <Navbar />

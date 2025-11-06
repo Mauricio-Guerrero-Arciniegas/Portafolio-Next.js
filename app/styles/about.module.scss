@@ -6,17 +6,13 @@
   padding: 2rem 1rem;
   width: 100%;
   min-height: 100vh;
-  overflow-y: auto; /* ✅ Scroll vertical habilitado */
+  overflow-y: auto; 
   background: radial-gradient(circle at top, rgba(0, 255, 255, 0.08), transparent 70%);
   backdrop-filter: blur(8px);
   color: var(--color-text);
   scroll-behavior: smooth;
   position: relative;
 }
-
-/* ================================
-   TÍTULO
-   ================================ */
 
 .about__title {
   font-size: 3rem;
@@ -52,10 +48,6 @@
   }
 }
 
-/* ================================
-   CONTENEDOR DE EXPERIENCIAS
-   ================================ */
-
 .about__content {
   width: 100%;
   max-width: 900px;
@@ -65,7 +57,7 @@
   padding: 2rem 0 3rem;
   position: relative;
 
-  /* Línea del timeline */
+  
   &::before {
     content: "";
     position: absolute;
@@ -85,7 +77,7 @@
   }
   100% {
     opacity: 1;
-    filter: drop-shadow(0 0 12px #00ffff); /* 💥 más brillante en el pico */
+    filter: drop-shadow(0 0 12px #00ffff);
   }
 }
 
@@ -95,10 +87,6 @@
     }
   }
 }
-
-/* ================================
-   TARJETA INDIVIDUAL
-   ================================ */
 
 .timeline__item {
   position: relative;
@@ -114,7 +102,6 @@
   transition: all 0.3s ease;
   overflow: hidden;
 
-  /* 🔵 Conector circular */
   &::before {
     content: "";
     position: absolute;
@@ -158,10 +145,6 @@
   }
 }
 
-/* ================================
-   CONTENIDO DE LA TARJETA
-   ================================ */
-
 .timeline__item h3 {
   margin: 0;
   font-size: 1.3rem;
@@ -191,10 +174,6 @@
   }
 }
 
-/* ================================
-   HABILIDADES (SKILLS)
-   ================================ */
-
 .timeline__skills {
   display: flex;
   flex-wrap: wrap;
@@ -218,10 +197,6 @@
     font-size: 0.7rem;
   }
 }
-
-/* ================================
-   MODO OSCURO / CLARO
-   ================================ */
 
 [data-theme='dark'] .about {
   background: radial-gradient(circle at top, rgba(0, 255, 255, 0.08), transparent 70%);
