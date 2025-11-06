@@ -12,6 +12,7 @@ interface Project {
   image: string;
   demo: string;
   code: string;
+  technologies?: string[]; // ✅ agregado
 }
 
 interface CarouselProps {
@@ -37,6 +38,8 @@ export default function Carousel({ projects }: CarouselProps) {
     setCurrent(index);
   };
 
+  const project = projects[current];
+
   return (
     <div className={styles.carousel}>
       <div className={styles.carouselMain}>
@@ -54,21 +57,33 @@ export default function Carousel({ projects }: CarouselProps) {
               className={styles.slide}
             >
               <Image
-                src={projects[current].image}
-                alt={projects[current].title}
+                src={project.image}
+                alt={project.title}
                 width={600}
                 height={400}
                 className={styles.image}
               />
-              <h2>{projects[current].title}</h2>
-              <p>{projects[current].description}</p>
-              <div className={styles.buttons}>
-                <a href={projects[current].demo} target="_blank" rel="noreferrer">
-                  <ExternalLink size={18} /> Demo
-                </a>
-                <a href={projects[current].code} target="_blank" rel="noreferrer">
-                  <Github size={18} /> Código
-                </a>
+
+              <div className={styles.projectInfo}>
+                <h2>{project.title}</h2>
+                <p>{project.description}</p>
+
+
+                <div className={styles.buttons}>
+                  <a href={project.demo} target="_blank" rel="noreferrer">
+                    <ExternalLink size={18} /> Demo
+                  </a>
+                  <a href={project.code} target="_blank" rel="noreferrer">
+                    <Github size={18} /> Código
+                  </a>
+                </div>
+                {project.technologies && (
+                  <div className={styles.techList}>
+                    {project.technologies.map((tech) => (
+                      <span key={tech} className={styles.techTag}>{tech}</span>
+                    ))}
+                  </div>
+                )}
               </div>
             </motion.div>
           </AnimatePresence>

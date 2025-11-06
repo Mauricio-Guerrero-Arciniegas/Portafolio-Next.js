@@ -141,3 +141,33 @@
   .buttons a { font-size: 0.75rem; padding: 0.3rem 0.6rem; }
   .arrow { font-size: 1.5rem; }
 }
+
+.projectInfo {
+  text-align: center;
+  color: #fff;
+  margin-top: 1rem;
+}
+
+.techList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.techTag {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.4rem 0.8rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  color: #fff;
+  backdrop-filter: blur(6px);
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+  }
+}

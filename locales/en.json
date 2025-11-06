@@ -1,44 +1,54 @@
 {
   "navbar": {
     "home": "Home",
-    "about": "About me",
+    "about": "About Me",
     "projects": "Projects",
     "contact": "Contact"
   },
   "home": {
     "title": "Mauricio Guerrero A.",
-    "subtitle": "Systems Engineer - Web developer focused on creating modern and engaging digital experiences.",
-    "ctaProjects": "View projects",
-    "ctaContact": "Contact me"
+    "subtitle": "Systems Engineer - Web Developer focused on creating modern and engaging digital experiences.",
+    "ctaProjects": "View Projects",
+    "ctaContact": "Contact Me"
   },
   "about": {
-    "title": "About me",
+    "title": "About Me",
     "experience": [
       {
         "title": "Systems Engineer",
-        "description": "Passionate about software development, technological innovation, and process optimization. I specialize in creating efficient and scalable solutions, combining skills in programming, data analysis, and project management. I am committed to continuous learning and applying new technologies to solve complex problems and make a positive impact on organizations and society.",
-        "skills": ["HTML", "CSS", "JavaScript"]
+        "description": "Passionate about software development, technological innovation, and process optimization. I specialize in creating efficient and scalable solutions, combining skills in programming, data analysis, and project management. I’m deeply interested in continuous learning and applying new technologies to solve complex problems and make a positive impact on organizations and society.",
+        "skills": ["HTML", "CSS", "Javascript"]
       },
       {
         "title": "Fullstack Developer Graduate",
-        "description": "I am a Fullstack developer with training in designing, developing, and implementing modern web applications. I have solid knowledge in both frontend and backend technologies, and I enjoy creating functional and efficient solutions. I am motivated to keep learning, tackle challenges, and contribute to projects in development companies.",
+        "description": "I am a Fullstack Developer trained in the design, development, and implementation of modern web applications. I have solid knowledge in both frontend and backend technologies, and I enjoy building functional and efficient solutions. I’m motivated by continuous learning, facing new challenges, and contributing to projects in development companies.",
         "skills": ["React.js", "Next.js", "SASS", "Node.js", "Nest.js", "TypeScript", "AWS", "Git", "Docker", "SQL and NoSQL Databases", "Agile Methodologies", "GraphQL", "REST APIs", "Clean Code", "Design Patterns", "Software Architecture"]
       },
       {
         "title": "Freelance Developer",
-        "description": "As a freelance developer, I dedicate my time to building applications independently, aiming to practice my skills and explore new technologies. My projects reflect my continuous learning and ability to develop functional solutions that showcase my experience and creativity in software development.",
+        "description": "As a freelance developer, I dedicate my time to creating independent applications to practice my skills and explore new technologies. My projects reflect continuous learning and my ability to develop functional solutions that demonstrate my experience and creativity in software development.",
         "skills": ["Web Applications", "Personal Projects", "New Technologies", "E-commerce", "Fullstack"]
+      },
+      {
+        "title": "Systems Engineer - Backend Developer",
+        "description": "I have worked in healthcare institutions, managing databases for medical records and developing frontend interfaces to access this information, as well as providing computer and network support.",
+        "skills": ["Medical Record Databases"]
+      },
+      {
+        "title": "Systems Engineer - Instructor",
+        "description": "I’ve had the opportunity to train people in fields such as Robotics, Computer Systems, and Equipment Maintenance.",
+        "skills": ["Instruction and Staff Training"]
       }
     ]
   },
   "contact": {
-  "title": "Contact me",
-  "name": "Your name",
-  "message": "Your message",
-  "send": "Send via WhatsApp"
-},
-"projects": {
-  "title": "Projects",
-  "subtitle": "Some of my recent work"
-}
+    "title": "Contact Me",
+    "name": "Your Name",
+    "message": "Your Message",
+    "send": "Send via WhatsApp"
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "Some of my recent work"
+  }
 }

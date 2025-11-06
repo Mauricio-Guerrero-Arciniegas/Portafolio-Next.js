@@ -28,6 +28,16 @@
         "title": "Desarrollador Freelance",
         "description": "Como desarrollador freelance, dedico mi tiempo a crear aplicaciones de manera independiente, con el objetivo de practicar mis conocimientos y explorar nuevas tecnologías. Mis proyectos reflejan mi aprendizaje continuo y mi capacidad para desarrollar soluciones funcionales que demuestran mi experiencia y creatividad en el desarrollo de software.",
         "skills": ["Aplicaciones web", "Proyectos personales", "Nuevas tecnologías", "e-commerce", "fullstack"]
+      },
+      {
+        "title": "Ingeniero de Sistemas - Backend Developer",
+        "description": "He desempeñado funciones en Entidades de la Salud, encargado de Bases de datos de Historias Clinicas y frontend para acceder a esa informacion, soporte de equipos de computo y redes.",
+        "skills": ["Bases de datos de Historias Clinicas"]
+      },
+      {
+        "title": "Ingeniero de Sistemas - Instructor",
+        "description": "He tenido la oportunidad de Capacitar a personas en campos de Robotica, Sistemas de computo y mantenimiento de equipos.",
+        "skills": ["Instruccion y Capacitacion de personal"]
       }
     ]
   },
