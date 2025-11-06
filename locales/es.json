@@ -41,14 +41,108 @@
       }
     ]
   },
+
+  
+  "projects": {
+    "title": "Proyectos",
+    "subtitle": "Algunos de mis trabajos recientes",
+    "items": [
+      {
+        "title": "Transacciones Bancarias",
+        "description": "Es una simulación de Transacciones Bancarias, Aplicación Fullstack que permite el registro de usuarios con contraseña y número de cuenta, encriptación (bcrypt hash 32) y transferencia de dinero entre ellos, actualización en base de datos de saldos disponibles, resumen de transacciones recientes, ambiente frontend para visualizar los datos y notificaciones para validaciones. (para demo requiere backend corriendo).",
+        "image": "/images/projects/p3.png",
+        "demo": "https://aplicacion-bancaria-frontend.vercel.app/register",
+        "code": "https://github.com/Mauricio-Guerrero-Arciniegas/aplicacion-bancaria",
+        "technologies": ["React.js", "Node.js", "Typescript", "Express", "Nest", "NeonDB", "Postman", "bcrypt", "JWT", "SCSS"]
+      },
+      {
+        "title": "Tienda de Variedades",
+        "description": "Aplicación real de comercio online con renderizado condicional, Context, alojamiento de imágenes en servidor gratuito, método de pago con formulario de datos del cliente y carga de comprobantes, comunicación vía mensaje autogenerado de WhatsApp.",
+        "image": "/images/projects/p1.png",
+        "demo": "https://variedades-e-commerce.vercel.app/",
+        "code": "https://github.com/Mauricio-Guerrero-Arciniegas/Variedades-e-commerce",
+        "technologies": ["React.js", "Next.js", "TypeScript", "Node.js", "SCSS"]
+      },
+      {
+        "title": "Juego de ataques",
+        "description": "Simulación Fullstack de una partida de juego con creación de usuarios, almacenamiento de nivel de vida y ataque, interacción y resultados. (demo requiere backend corriendo)",
+        "image": "/images/projects/p2.png",
+        "demo": "https://games-frontend-xi.vercel.app/",
+        "code": "https://github.com/Mauricio-Guerrero-Arciniegas/games-backend",
+        "technologies": ["React.js", "Next.js", "TypeScript", "Node.js", "SCSS"]
+      },
+      {
+        "title": "Portfolio",
+        "description": "Un portafolio personal sin scroll con animaciones, glassmorfismo, diseño responsive, cambio de idioma (LanguageContext), modo claro y oscuro, mensajes autogenerados por WhatsApp y carrusel de proyectos.",
+        "image": "/images/projects/p4.png",
+        "demo": "https://portafolio-next-js-lemon.vercel.app/",
+        "code": "https://github.com/Mauricio-Guerrero-Arciniegas/Portafolio-Next.js",
+        "technologies": ["React.js", "Next.js", "TypeScript", "Node.js", "Framer Motion", "Lucide React", "SCSS"]
+      },
+      {
+        "title": "Game Awards",
+        "description": "Copia exacta de la pantalla inicial de Game Awards 2022 con el fin de aplicar y practicar conocimientos avanzados de Layout CSS.",
+        "image": "/images/projects/p6.png",
+        "demo": "https://the-game-awards.netlify.app/",
+        "code": "https://github.com/Mauricio-Guerrero-Arciniegas/The_Game_Awards",
+        "technologies": ["React.js", "Vite", "JavaScript", "Framer Motion", "Lucide React", "SCSS"]
+      },
+      {
+        "title": "Tinder",
+        "description": "Copia exacta de la pantalla inicial de Tinder para practicar conocimientos avanzados de Layout CSS.",
+        "image": "/images/projects/p7.png",
+        "demo": "https://tinder-copy.netlify.app/",
+        "code": "https://github.com/Mauricio-Guerrero-Arciniegas/Tinder-clone",
+        "technologies": ["React.js", "Vite", "JavaScript", "Framer Motion", "Lucide React", "SCSS"]
+      },
+      {
+        "title": "Avatar The Way of Water",
+        "description": "Copia exacta de la pantalla inicial de Avatar: The Way of Water, creada para practicar conocimientos avanzados de Layout CSS.",
+        "image": "/images/projects/p5.png",
+        "demo": "https://avatar-the-way-of-water.netlify.app/",
+        "code": "https://github.com/Mauricio-Guerrero-Arciniegas/Avatar-The-way-of-Water",
+        "technologies": ["React.js", "Vite", "JavaScript", "Framer Motion", "Lucide React", "SCSS"]
+      },
+      {
+        "title": "Weather Assistant",
+        "description": "Aplicación para obtener datos del clima conectada a la API de Open Weather.",
+        "image": "/images/projects/p8.png",
+        "demo": "https://weather-assistant-app.netlify.app/",
+        "code": "https://github.com/Mauricio-Guerrero-Arciniegas/Weather-Assistant",
+        "technologies": ["React.js", "Next.js", "TypeScript", "JavaScript", "SCSS"]
+      },
+      {
+        "title": "CRUD de Películas",
+        "description": "Aplicación CRUD usando localStorage para almacenar la información, con funcionalidad completa.",
+        "image": "/images/projects/p9.png",
+        "demo": "https://movies-crud-app.netlify.app/",
+        "code": "https://github.com/Mauricio-Guerrero-Arciniegas/movies-CRUD",
+        "technologies": ["React.js", "Next.js", "TypeScript", "JavaScript", "SCSS"]
+      },
+      {
+        "title": "Homeopathy SPA",
+        "description": "Single Page Application para una clínica de homeopatía, con formulario de contacto y secciones informativas.",
+        "image": "/images/projects/p11.png",
+        "demo": "https://homeopathy-web.netlify.app/",
+        "code": "https://github.com/Mauricio-Guerrero-Arciniegas/homeophatics-webpage-beta",
+        "technologies": ["React.js", "JavaScript", "SCSS"]
+      },
+      {
+        "title": "Calculadora",
+        "description": "Calculadora funcional usando claymorfismo para su parte visual — práctica de lógica JavaScript y diseño CSS.",
+        "image": "/images/projects/p10.png",
+        "demo": "https://calculator-javascript-css.netlify.app/",
+        "code": "https://github.com/Mauricio-Guerrero-Arciniegas/Calculator",
+        "technologies": ["React.js", "JavaScript", "CSS"]
+      }
+    ]
+  },
+
   "contact": {
   "title": "Contáctame",
   "name": "Tu nombre",
   "message": "Tu mensaje",
   "send": "Enviar por WhatsApp"
-},
-"projects": {
-  "title": "Proyectos",
-  "subtitle": "Algunos de mis trabajos recientes"
 }
+
 }

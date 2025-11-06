@@ -49,6 +49,97 @@
   },
   "projects": {
     "title": "Projects",
-    "subtitle": "Some of my recent work"
+    "subtitle": "Some of my recent work",
+    "items": [
+      {
+        "title": "Bank Transactions",
+        "description": "A banking transactions simulation. A Fullstack application that allows user registration with password and account number, encryption (bcrypt hash 32), and money transfers between users. It includes balance updates in the database, a summary of recent transactions, a frontend environment to display data, and validation notifications. (The demo requires a running backend).",
+        "image": "/images/projects/p3.png",
+        "demo": "https://aplicacion-bancaria-frontend.vercel.app/register",
+        "code": "https://github.com/Mauricio-Guerrero-Arciniegas/aplicacion-bancaria",
+        "technologies": ["React.js", "Node.js", "Typescript", "Express", "Nest", "NeonDB", "Postman", "bcrypt", "JWT", "SCSS"]
+      },
+      {
+        "title": "Varieties Store",
+        "description": "A real online store with conditional rendering, Context API, free image hosting, a payment form with customer data and image upload for receipts, and communication via auto-generated WhatsApp messages.",
+        "image": "/images/projects/p1.png",
+        "demo": "https://variedades-e-commerce.vercel.app/",
+        "code": "https://github.com/Mauricio-Guerrero-Arciniegas/Variedades-e-commerce",
+        "technologies": ["React.js", "Next.js", "TypeScript", "Node.js", "SCSS"]
+      },
+      {
+        "title": "Attack Game",
+        "description": "A Fullstack game simulation featuring user creation, life and attack levels, player interaction, and results. (The demo requires a running backend).",
+        "image": "/images/projects/p2.png",
+        "demo": "https://games-frontend-xi.vercel.app/",
+        "code": "https://github.com/Mauricio-Guerrero-Arciniegas/games-backend",
+        "technologies": ["React.js", "Next.js", "TypeScript", "Node.js", "SCSS"]
+      },
+      {
+        "title": "Portfolio",
+        "description": "A scroll-free personal portfolio featuring animations, glassmorphism design, responsive layout, multi-language support (LanguageContext), light/dark mode, auto-generated WhatsApp messages, and a project carousel.",
+        "image": "/images/projects/p4.png",
+        "demo": "https://portafolio-next-js-lemon.vercel.app/",
+        "code": "https://github.com/Mauricio-Guerrero-Arciniegas/Portafolio-Next.js",
+        "technologies": ["React.js", "Next.js", "TypeScript", "Node.js", "Framer Motion", "Lucide React", "SCSS"]
+      },
+      {
+        "title": "Game Awards",
+        "description": "An exact replica of the Game Awards 2022 homepage created to practice and apply advanced CSS layout techniques.",
+        "image": "/images/projects/p6.png",
+        "demo": "https://the-game-awards.netlify.app/",
+        "code": "https://github.com/Mauricio-Guerrero-Arciniegas/The_Game_Awards",
+        "technologies": ["React.js", "Vite", "JavaScript", "Framer Motion", "Lucide React", "SCSS"]
+      },
+      {
+        "title": "Tinder",
+        "description": "An exact replica of Tinder’s homepage built to practice and apply advanced CSS layout concepts.",
+        "image": "/images/projects/p7.png",
+        "demo": "https://tinder-copy.netlify.app/",
+        "code": "https://github.com/Mauricio-Guerrero-Arciniegas/Tinder-clone",
+        "technologies": ["React.js", "Vite", "JavaScript", "Framer Motion", "Lucide React", "SCSS"]
+      },
+      {
+        "title": "Avatar The Way of Water",
+        "description": "An exact replica of the Avatar: The Way of Water homepage built to apply and practice advanced CSS layout skills.",
+        "image": "/images/projects/p5.png",
+        "demo": "https://avatar-the-way-of-water.netlify.app/",
+        "code": "https://github.com/Mauricio-Guerrero-Arciniegas/Avatar-The-way-of-Water",
+        "technologies": ["React.js", "Vite", "JavaScript", "Framer Motion", "Lucide React", "SCSS"]
+      },
+      {
+        "title": "Weather Assistant",
+        "description": "A weather app connected to the OpenWeather API that provides real-time weather data.",
+        "image": "/images/projects/p8.png",
+        "demo": "https://weather-assistant-app.netlify.app/",
+        "code": "https://github.com/Mauricio-Guerrero-Arciniegas/Weather-Assistant",
+        "technologies": ["React.js", "Next.js", "TypeScript", "JavaScript", "SCSS"]
+      },
+      {
+        "title": "Movies CRUD",
+        "description": "A CRUD application using localStorage to store information, offering full functionality.",
+        "image": "/images/projects/p9.png",
+        "demo": "https://movies-crud-app.netlify.app/",
+        "code": "https://github.com/Mauricio-Guerrero-Arciniegas/movies-CRUD",
+        "technologies": ["React.js", "Next.js", "TypeScript", "JavaScript", "SCSS"]
+      },
+      {
+        "title": "Homeopathy SPA",
+        "description": "A single-page application for a homeopathy clinic, featuring a contact form and informational sections.",
+        "image": "/images/projects/p11.png",
+        "demo": "https://homeopathy-web.netlify.app/",
+        "code": "https://github.com/Mauricio-Guerrero-Arciniegas/homeophatics-webpage-beta",
+        "technologies": ["React.js", "JavaScript", "SCSS"]
+      },
+      {
+        "title": "Calculator",
+        "description": "A functional calculator using claymorphism for its visual design — a practice of JavaScript logic and CSS styling.",
+        "image": "/images/projects/p10.png",
+        "demo": "https://calculator-javascript-css.netlify.app/",
+        "code": "https://github.com/Mauricio-Guerrero-Arciniegas/Calculator",
+        "technologies": ["React.js", "JavaScript", "CSS"]
+      }
+    ]
   }
+
 }

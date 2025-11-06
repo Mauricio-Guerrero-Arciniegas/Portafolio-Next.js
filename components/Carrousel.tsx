@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from "react";
+import { useLanguage } from "@/context/LanguageContext";
 import styles from "../app/styles/projects.module.scss";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
@@ -24,6 +25,7 @@ export default function Carousel({ projects }: CarouselProps) {
   const [direction, setDirection] = useState(0);
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
+  const { language } = useLanguage();
 
   const nextSlide = () => {
     setDirection(1);
@@ -40,7 +42,7 @@ export default function Carousel({ projects }: CarouselProps) {
     setCurrent(index);
   };
 
-  // 👇 Detectar swipe
+  // Swipe en pantallas táctiles
   const handleTouchStart = (e: React.TouchEvent) => {
     setTouchStart(e.targetTouches[0].clientX);
   };
@@ -51,12 +53,9 @@ export default function Carousel({ projects }: CarouselProps) {
 
   const handleTouchEnd = () => {
     if (!touchStart || !touchEnd) return;
-
     const distance = touchStart - touchEnd;
-
-    if (distance > 50) nextSlide(); // deslizar izquierda → siguiente
-    if (distance < -50) prevSlide(); // deslizar derecha → anterior
-
+    if (distance > 50) nextSlide();
+    if (distance < -50) prevSlide();
     setTouchStart(null);
     setTouchEnd(null);
   };
@@ -98,17 +97,21 @@ export default function Carousel({ projects }: CarouselProps) {
 
                 <div className={styles.buttons}>
                   <a href={project.demo} target="_blank" rel="noreferrer">
-                    <ExternalLink size={18} /> Demo
+                    <ExternalLink size={18} />{" "}
+                    {language === "es" ? "Demo" : "Live Demo"}
                   </a>
                   <a href={project.code} target="_blank" rel="noreferrer">
-                    <Github size={18} /> Código
+                    <Github size={18} />{" "}
+                    {language === "es" ? "Código" : "Source Code"}
                   </a>
                 </div>
 
                 {project.technologies && (
                   <div className={styles.techList}>
                     {project.technologies.map((tech) => (
-                      <span key={tech} className={styles.techTag}>{tech}</span>
+                      <span key={tech} className={styles.techTag}>
+                        {tech}
+                      </span>
                     ))}
                   </div>
                 )}
