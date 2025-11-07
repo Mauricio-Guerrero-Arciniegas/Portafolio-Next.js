@@ -52,6 +52,14 @@
     "subtitle": "Some of my recent work",
     "items": [
       {
+        "title": "ai-assistant-pdf",
+        "description": "AI Text Assistant is a web application that allows users to input text and receive intelligent responses generated through AI processing. The interface is built with Next.js and styled using SCSS modules, featuring a modern neon-inspired dark theme. The app includes a dynamic form, smooth interactions, and responsive design, ensuring a consistent user experience on all devices. Its clean structure and reusable components make it a great example of a scalable, interactive web app built with modern frontend technologies.",
+        "image": "/images/projects/p12.png",
+        "demo": "https://aplicacion-bancaria-frontend.vercel.app/register",
+        "code": "https://github.com/Mauricio-Guerrero-Arciniegas/aplicacion-bancaria",
+        "technologies": ["React.js", "Node.js", "Typescript", "Express", "Nest", "NeonDB", "Postman", "bcrypt", "JWT", "SCSS"]
+      },
+      {
         "title": "Bank Transactions",
         "description": "A banking transactions simulation. A Fullstack application that allows user registration with password and account number, encryption (bcrypt hash 32), and money transfers between users. It includes balance updates in the database, a summary of recent transactions, a frontend environment to display data, and validation notifications. (The demo requires a running backend).",
         "image": "/images/projects/p3.png",
