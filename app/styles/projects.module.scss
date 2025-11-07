@@ -1,23 +1,50 @@
-.projects {
+.sectionTitle {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
   text-align: center;
-  padding: 4rem 1.5rem;
-  background: var(--color-bg);
-  color: var(--color-text);
+  position: relative;
+  display: inline-block;
+  cursor: default;
 
-  &__title {
-    font-size: 2.2rem;
-    font-weight: 700;
-    color: var(--color-primary);
-    margin-bottom: 0.8rem;
+  background: linear-gradient(90deg, #00ffff, #3a8bff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.4);
+  transition: all 0.3s ease;
+
+  &:hover {
+    text-shadow: 0 0 12px rgba(0, 255, 255, 0.7);
+    transform: translateY(-2px);
   }
 
-  &__subtitle {
-    font-size: 1.1rem;
-    opacity: 0.8;
-    margin-bottom: 2.5rem;
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.6rem;
   }
 }
 
+.sectionSubtitle {
+  font-size: 1.1rem;
+  opacity: 0.85;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  color: var(--color-text);
+}
+
+/* ==================== SECCION PROJECTS ==================== */
+.projects {
+  text-align: center;
+  padding: 6rem 1.5rem 4rem; /* espacio arriba para navbar */
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+/* ==================== CAROUSEL ==================== */
 .carousel {
   display: flex;
   flex-direction: column;
@@ -40,7 +67,7 @@
   margin: 0 auto;
   overflow: hidden;
   border-radius: 1rem;
-  min-height: 400px; // 👈 asegura un tamaño base pero deja crecer
+  min-height: 400px;
 }
 
 .slide {
@@ -49,20 +76,38 @@
   align-items: center;
   gap: 1rem;
   width: 100%;
-  background: rgba(255, 255, 255, 0.05);
-  padding: 1rem;
+  background: var(--color-card-bg, rgba(0, 0, 0, 0.05));
+  padding: 1.5rem;
   border-radius: 1rem;
-  overflow: visible; // 👈 importante: permite que se vea todo el contenido
+  transition: background 0.3s ease;
 }
 
 .image {
   width: 100%;
   height: 100%;
-  object-fit: cover; // hace que la imagen ocupe todo el contenedor sin deformarse
-  object-position: center; // centra la parte más relevante
+  object-fit: cover;
+  object-position: center;
   border-radius: 1rem;
 }
 
+.projectInfo {
+  text-align: center;
+  color: var(--color-text);
+  margin-top: 1rem;
+
+  h2 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--color-primary);
+  }
+
+  p {
+    opacity: 0.9;
+    line-height: 1.4;
+  }
+}
+
+/* ==================== BOTONES ==================== */
 .buttons {
   display: flex;
   justify-content: center;
@@ -76,72 +121,19 @@
     padding: 0.4rem 0.8rem;
     border-radius: 0.5rem;
     background: var(--color-primary);
-    color: white;
+    color: #fff;
     text-decoration: none;
     font-size: 0.8rem;
+    transition: all 0.3s ease;
 
     &:hover {
-      background: #007bff;
+      filter: brightness(1.1);
+      transform: translateY(-2px);
     }
   }
 }
 
-.arrow {
-  background: none;
-  border: none;
-  font-size: 2rem;
-  cursor: pointer;
-  color: var(--color-text);
-
-  &:hover {
-    transform: scale(1.2);
-    color: var(--color-primary);
-  }
-}
-
-.indicators {
-  display: flex;
-  gap: 0.5rem;
-  margin-top: 0.5rem;
-}
-
-.dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: gray;
-  border: none;
-  cursor: pointer;
-
-  &.active {
-    background: var(--color-primary);
-    box-shadow: 0 0 6px var(--color-primary);
-  }
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
-  .carouselContent { width: 90%; }
-
-  .slide h2 { font-size: 1.2rem; }
-  .slide p { font-size: 0.95rem; }
-}
-
-@media (max-width: 480px) {
-  .carouselContent { width: 100%; }
-
-  .slide h2 { font-size: 1rem; }
-  .slide p { font-size: 0.85rem; }
-  .buttons a { font-size: 0.75rem; padding: 0.3rem 0.6rem; }
-  .arrow { font-size: 1.5rem; }
-}
-
-.projectInfo {
-  text-align: center;
-  color: #fff;
-  margin-top: 1rem;
-}
-
+/* ==================== TECNOLOGIAS ==================== */
 .techList {
   display: flex;
   flex-wrap: wrap;
@@ -151,17 +143,88 @@
 }
 
 .techTag {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   padding: 0.4rem 0.8rem;
   border-radius: 12px;
   font-size: 0.8rem;
-  color: #fff;
+  color: var(--color-text);
   backdrop-filter: blur(6px);
   transition: all 0.3s ease;
 
   &:hover {
-    background: rgba(255, 255, 255, 0.3);
+    background: var(--color-primary);
+    color: #fff;
     transform: scale(1.05);
+  }
+}
+
+/* ==================== MODO OSCURO ==================== */
+[data-theme='dark'] {
+  .slide {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .techTag {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+
+    &:hover {
+      background: var(--color-primary);
+      color: #fff;
+    }
+  }
+}
+
+/* ==================== FLECHAS ==================== */
+.arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: var(--color-text);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: var(--color-primary);
+    color: #fff;
+    transform: scale(1.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  &:active {
+    transform: scale(1.05);
+  }
+}
+
+[data-theme='light'] .arrow {
+  background: rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    background: var(--color-primary);
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+}
+
+[data-theme='dark'] .arrow {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+
+  &:hover {
+    background: var(--color-primary);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
   }
 }

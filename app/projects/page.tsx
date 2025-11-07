@@ -9,8 +9,8 @@ export default function ProjectsPage() {
 
   return (
     <section className={styles.projects}>
-      <h1 className={styles.projects__title}>{t.projects.title}</h1>
-      <p className={styles.projects__subtitle}>{t.projects.subtitle}</p>
+      <h1 className={styles.sectionTitle}>{t.projects.title}</h1>
+      <p className={styles.sectionSubtitle}>{t.projects.subtitle}</p>
       <Carousel projects={t.projects.items} />
     </section>
   );

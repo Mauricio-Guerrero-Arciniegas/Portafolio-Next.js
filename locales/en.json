@@ -55,9 +55,9 @@
         "title": "ai-assistant-pdf",
         "description": "AI Text Assistant is a web application that allows users to input text and receive intelligent responses generated through AI processing. The interface is built with Next.js and styled using SCSS modules, featuring a modern neon-inspired dark theme. The app includes a dynamic form, smooth interactions, and responsive design, ensuring a consistent user experience on all devices. Its clean structure and reusable components make it a great example of a scalable, interactive web app built with modern frontend technologies.",
         "image": "/images/projects/p12.png",
-        "demo": "https://aplicacion-bancaria-frontend.vercel.app/register",
-        "code": "https://github.com/Mauricio-Guerrero-Arciniegas/aplicacion-bancaria",
-        "technologies": ["React.js", "Node.js", "Typescript", "Express", "Nest", "NeonDB", "Postman", "bcrypt", "JWT", "SCSS"]
+        "demo": "https://ai-asssistant.vercel.app/",
+        "code": "https://github.com/Mauricio-Guerrero-Arciniegas/ai-asssistant",
+       "technologies": ["Next.js", "AI Integration", "Responsive Design", "Typescript", "SCSS"]
       },
       {
         "title": "Bank Transactions",

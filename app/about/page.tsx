@@ -25,14 +25,8 @@ export default function AboutPage() {
 
   return (
     <section className={styles.about}>
-      <motion.h1
-        className={styles.about__title}
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-      >
-        {t.about.title}
-      </motion.h1>
+      {/* Título principal unificado */}
+      <h1 className={styles.sectionTitle}>{t.about.title}</h1>
 
       <motion.div
         className={styles.about__content}

@@ -5,34 +5,44 @@
   box-sizing: border-box;
 }
 
-/* Variables de tema */
+/* Variables globales */
 :root {
-  --color-bg: #ffffff;
-  --color-text: #000000;
+  --color-text-light: #000;
+  --color-text-dark: #fff;
+  --color-bg-light: #fff;
+  --color-bg-dark: #111;
+  --color-primary: #00ffff;
 }
 
+/* Tema claro */
+[data-theme='light'] {
+  --color-text: var(--color-text-light);
+  --color-bg: var(--color-bg-light);
+}
+
+/* Tema oscuro */
 [data-theme='dark'] {
-  --color-bg: #0f0f0f;
-  --color-text: #ffffff;
+  --color-text: var(--color-text-dark);
+  --color-bg: var(--color-bg-dark);
 }
 
-/* HTML y body ocupan toda la pantalla y bloquean scroll */
+/* HTML y body ocupan toda la pantalla y bloquean scroll horizontal */
 html, body {
   width: 100%;
-  min-height: 100vh;          /* deja crecer la página */
-  overflow-x: hidden;         /* evita scroll horizontal */
-  overflow-y: auto;           /* permite scroll vertical */
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
   background-color: var(--color-bg);
   color: var(--color-text);
   font-family: sans-serif;
-  scroll-behavior: smooth;    /* desplazamiento suave */
+  scroll-behavior: smooth;
 }
 
 /* Contenedor principal de Home */
 #home {
-  height: 100vh;      /* 👈 altura exacta de la ventana */
-  width: 100vw;       /* 👈 ancho completo */
-  display: flex;      /* opcional: para centrar contenido */
+  height: 100vh;
+  width: 100vw;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;

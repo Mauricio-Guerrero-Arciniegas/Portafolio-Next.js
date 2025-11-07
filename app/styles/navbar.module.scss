@@ -1,25 +1,21 @@
 .navbar {
-  position: fixed;   
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%;      
+  width: 100%;
   z-index: 2000;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.8rem 1.5rem;
-   background: linear-gradient(
-    to bottom,
-    rgba(0,0,0,0.8),  
-    rgba(0,0,0,0.9)      
-  );
+  padding: 0.2rem 0.5rem;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.9));
   color: var(--color-text);
 
-  &__logo a {
-    font-weight: bold;
-    font-size: 1.5rem;
-    text-decoration: none;
-    color: inherit;
+  a, span, button {
+    color: var(--color-text);
+    font-weight: 500;
+    line-height: 1;
+    padding: 0.15rem 0.4rem;
   }
 
   &__links {
@@ -32,8 +28,6 @@
 
       a {
         text-decoration: none;
-        color: inherit;
-        font-weight: 500;
         transition: color 0.3s;
 
         &:hover {
@@ -42,33 +36,6 @@
       }
     }
   }
-
-  .navbar__lang {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    &:hover {
-      opacity: 0.9;
-    }
-  }
-
-  .navbar__flag {
-  width: 28px;
-  height: 20px;
-  border-radius: 4px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-
-  &:hover {
-    transform: scale(1.15);
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
-  }
-}
 
   &__toggle {
     display: flex;
@@ -82,7 +49,7 @@
     span {
       display: block;
       width: 25px;
-      height: 3px;
+      height: 1px;
       background: var(--color-text);
       border-radius: 2px;
     }
@@ -92,30 +59,78 @@
     }
   }
 
-  &__mobile {
+  .navbar__lang {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+
+  .navbar__flag {
+    width: 28px;
+    height: 20px;
+    border-radius: 4px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      transform: scale(1.15);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  .navbar__mobile {
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
-    padding: 1.5rem;
-    background: var(--color-bg);
-    position: absolute;
-    top: 100%;
+    gap: 1rem;
+    padding: 0.8rem 1rem;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.9));
+    position: fixed;
+    top: 0;
     left: 0;
-    right: 0;
+    width: 100%;
+    z-index: 2000;
 
     a {
       text-decoration: none;
-      color: inherit;
+      color: var(--color-text);
       font-weight: 500;
+      padding: 0.15rem 0.4rem;
 
       &:hover {
         color: var(--color-primary);
       }
     }
 
-    .navbar__lang {
+    .navbar__mobile__actions {
+      display: flex;
+      gap: 1rem;
       margin-top: 0.5rem;
+      align-items: center;
     }
+  }
+}
+
+/* Modo claro: navbar más clara y textos visibles */
+[data-theme='light'] .navbar {
+  background: linear-gradient(to bottom, rgba(255,255,255,0.85), rgba(245,245,245,0.95));
+  color: #222;
+
+  a, span, button {
+    color: #222;
+  }
+
+  &__toggle span {
+    background: #222;
+  }
+
+  .navbar__mobile {
+    background: linear-gradient(to bottom, rgba(255,255,255,0.95), rgba(245,245,245,1));
   }
 }
 
@@ -123,7 +138,7 @@
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0.3rem;
+  padding: 0.2rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -164,24 +179,5 @@
   bottom: 0;
   background: black;
   opacity: 0.3;
-  z-index: 999; 
-}
-
-.navbar__mobile {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-  padding: 1.5rem;
-  background: var(--color-bg);
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  z-index: 1000; 
-}
-.navbar__mobile__actions {
-  display: flex;
-  gap: 1rem; 
-  margin-top: 0.5rem;
-  align-items: center; 
+  z-index: 1999; 
 }
